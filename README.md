@@ -1,2 +1,2 @@
-# final-project
-Separate repository for Final Project to make it easier to share or experiment with
+# *ELO*
+A project in many v-ifs by Ryan Ferner
