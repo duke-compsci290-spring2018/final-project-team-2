@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Ryan Ferner</title>
-        <meta name="description" content="Intro page for Ryan Ferner" >
+        <title>ELO Organizer</title>
+        <meta name="description" content="Free Elo calculation and organization tool" >
         <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <link rel="stylesheet" href="style.css">
@@ -26,55 +26,59 @@
         
         <div id = "app">
 <!--            Login Parts-->
-                <div v-if= "!logged" class = "container-fluid">
-                    <header>
-                        <h1>Log In or Create Account</h1>
-                        <p id = warning>THIS WEBSITE IS NOT SECURE, ONLY USE A PASSWORD THAT YOU WOULDN'T MIND GETTING STOLEN</p>
-                        <div class="navigation">
-                             <div class = "row">
-                                <div id = "signupbar" class = "col-sm-12 col-md-6">
-                                    <input class="new-username"
-                                       placeholder="new username"
-                                       v-model="newusername">
-                                    <input class="new-password"
-                                        type = "password"
-                                       placeholder="new user password"
-                                       v-model="confirmpassword">
-                                    <input class="confirm-password"
-                                        type = "password"
-                                       placeholder="enter password again"
-                                       v-model="newpassword">
-                                    <button id="sign-up" class="account-button" type="button" @click="signUp()">Sign Up</button>
+                <div>
+                    <div v-if= "!logged" class = "container-fluid">
+                        <header>
+                            <h1>Log In or Create Account</h1>
+                            <p id = warning>THIS WEBSITE IS NOT SECURE, ONLY USE A PASSWORD THAT YOU WOULDN'T MIND GETTING STOLEN</p>
+                            <div class="navigation">
+                                 <div class = "row">
+                                    <div id = "signupbar" class = "col-sm-12 col-md-6">
+                                        <input class="new-username"
+                                           placeholder="new username"
+                                           v-model="newusername">
+                                        <input class="new-password"
+                                            type = "password"
+                                           placeholder="new user password"
+                                           v-model="confirmpassword">
+                                        <input class="confirm-password"
+                                            type = "password"
+                                           placeholder="enter password again"
+                                           v-model="newpassword">
+                                        <button id="sign-up" class="account-button" type="button" @click="signUp()">Sign Up</button>
+                                    </div>
+
+                                    <div id = "loginbar" class = "col-sm-12 col-med-6">
+                                        <input class="old-username"
+                                           placeholder="returning username"
+                                           v-model="oldusername">
+                                        <input class="oldpassword" type = "password"
+                                           placeholder="returning user password"
+                                           v-model="oldpassword">
+                                        <button id="sign-in" class="account-button" type="button" @click="signIn()">Sign In</button>
+                                    </div>
+                                </div> 
                                 </div>
-                                 
-                                <div id = "loginbar" class = "col-sm-12 col-med-6">
-                                    <input class="old-username"
-                                       placeholder="returning username"
-                                       v-model="oldusername">
-                                    <input class="oldpassword" type = "password"
-                                       placeholder="returning user password"
-                                       v-model="oldpassword">
-                                    <button id="sign-in" class="account-button" type="button" @click="signIn()">Sign In</button>
-                                </div>
-                            </div> 
-                            </div>
-                    </header>
-                    <hr>
-                    <body>
-                    </body>
- 
-                </div>   
-                <div v-if = "logged">
-                    Logged in as {{role}} {{loggedIn.name}} 
-                    
-                    Notifications: 
-                    <div class = notifications v-if = "showNotifications">
-                        
+                        </header>
+                        <hr>
+                        <body>
+                        </body>
+
+                    </div>   
+                    <div v-if = "logged">
+                        Logged in as {{role}} {{loggedIn.name}} 
+
+                        Notifications: 
+                        <div class = notifications v-if = "showNotifications">
+
+                        </div>
+
+                        <button id="sign-in" class="account-button" type="button" @click="signOut()">Sign Out</button>
                     </div>
-                    
-                    <button id="sign-in" class="account-button" type="button" @click="signOut()">Sign Out</button>
+                    <button v-if = "screen !== 'project' && screen !== 'main'" @click = "screen = 'project'">Return to Project Menu</button>
+                    <button v-if = "screen !== 'main'" @click = "screen = 'main'">Return to Project Select</button>
                 </div>
-            
+
             
 <!-- Project Select screen -->
                 <div v-if = "screen === 'main'">
@@ -154,11 +158,24 @@
                                     <button @click = "addUser()">Add User</button></li>
                             </ul>
                         </div>
+                        
+                        <div id = "gamesList" class = "col-sm-12 col-md-6">
+                            <h2>Games:</h2>
+                            <ul>
+                                <li v-for = "game in sortedGames" v-if = "game.project.id === currentProject.id">
+                                    <h4>{{game.a1.name}}({{game.a1.elo}}) vs. {{game.a2.name}}({{game.a2.elo}})</h4>
+                                    <a v-if = "game.result === 'a1'">Win for {{game.a1.name}} (+{{game.a1Change}})</a>
+                                    <a v-if = "game.result === 'a2'">Win for {{game.a2.name}} (+{{game.a2Change}})</a>
+                                    <a v-if = "game.result === 't'">Tie! ({{game.a1Change}})</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>    
             </div>
 <!-- Enter New Game-->
             <div v-if= "screen === 'game'">
+                
                 <h1>Enter New Game</h1>
                 <div class = "container">
                     <div class = "row">

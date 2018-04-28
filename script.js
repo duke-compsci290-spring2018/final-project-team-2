@@ -182,6 +182,18 @@ var app = new Vue({
         },
         p2TieChange(){
             return Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,.5, app.currentProject.kval));
+        },
+        sortedGames(){
+            
+            var gg = [];
+            for (game in app.games){
+                gg.push(app.games[game]);
+            }
+            gg.sort(function(a,b){
+                return b.time-a.time;
+            })
+            return gg;
+            
         }
         
 
@@ -476,7 +488,10 @@ var app = new Vue({
                 a1Change: a1Change,
                 a2Change: a2Change,
                 time: Date.now(),
-                id: id
+                id: id,
+                project: app.currentProject,
+                result: app.outcome
+                
             });
             var ref = db.ref("projects/"+app.currentProject.id);
             
