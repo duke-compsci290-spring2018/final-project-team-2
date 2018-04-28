@@ -1,0 +1,88 @@
+.leaderboard{
+    list-style-type: decimal;
+}
+#results{
+    object-position: center; 
+}
+/*
+
+html {
+    font: 200%;
+    
+    background-color:beige;
+	}
+
+header {
+    position:relative;
+    bottom:20px;
+    font: arial;
+    text-align: center;
+    color: #222222;
+    text-align: center;
+    text-decoration: overline underline;
+    text-decoration-color: red;
+    color:lime;
+    display:flex;
+    flex-flow: column;
+    background:#111155;
+    border-color:red;
+    border-style:double;
+    border-width: thick;
+}
+button{
+    color: black;
+}
+header ul{
+    background: #224444;
+    align-content: center;
+    border-color: green;
+    border-width:medium;
+    border-bottom-style: dotted;
+    border-top-style: dotted;;
+}
+.navigation{
+
+}
+#warning{
+    color: red;
+}
+.navigation ul{
+    list-style: none;
+    font-size: 200%;
+    display:flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+    color: red;
+}
+body { 
+	font: 75%;
+	line-height: 2;
+	color: black;
+	}
+li{
+    color: #111111;
+}
+footer {
+    color:blue;
+    text-align: center;
+}
+.paragraph{ 
+    color: #111111;
+	}
+#toppic{
+    position: relative;
+    left: 20px;
+}
+.page-wrapper { 
+    margin:5%;
+    font-family:serif;
+    font-size: 100%;
+	position: relative;
+    background: inherit;
+	}
+a:link {color:#0000ff;}
+a:visited {color:#ff0077;}
+a:hover {color:#ffcccc;}
+*/

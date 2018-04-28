@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ryan Ferner</title>
+        <meta name="description" content="Intro page for Ryan Ferner" >
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" type="image/x-icon" href="fav.ico" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+        <script src = "./script.js" async></script>
+    
+    
+    
+    
+    <!-- support for this page -->
+
+    </head>
+    
+    <body>
+        
+        <div id = "app">
+<!--            Login Parts-->
+                <div v-if= "!logged" class = "container-fluid">
+                    <header>
+                        <h1>Log In or Create Account</h1>
+                        <p id = warning>THIS WEBSITE IS NOT SECURE, ONLY USE A PASSWORD THAT YOU WOULDN'T MIND GETTING STOLEN</p>
+                        <div class="navigation">
+                             <div class = "row">
+                                <div id = "signupbar" class = "col-sm-12 col-md-6">
+                                    <input class="new-username"
+                                       placeholder="new username"
+                                       v-model="newusername">
+                                    <input class="new-password"
+                                        type = "password"
+                                       placeholder="new user password"
+                                       v-model="confirmpassword">
+                                    <input class="confirm-password"
+                                        type = "password"
+                                       placeholder="enter password again"
+                                       v-model="newpassword">
+                                    <button id="sign-up" class="account-button" type="button" @click="signUp()">Sign Up</button>
+                                </div>
+                                 
+                                <div id = "loginbar" class = "col-sm-12 col-med-6">
+                                    <input class="old-username"
+                                       placeholder="returning username"
+                                       v-model="oldusername">
+                                    <input class="oldpassword" type = "password"
+                                       placeholder="returning user password"
+                                       v-model="oldpassword">
+                                    <button id="sign-in" class="account-button" type="button" @click="signIn()">Sign In</button>
+                                </div>
+                            </div> 
+                            </div>
+                    </header>
+                    <hr>
+                    <body>
+                    </body>
+ 
+                </div>   
+                <div v-if = "logged">
+                    Logged in as {{role}} {{loggedIn.name}} 
+                    
+                    Notifications: 
+                    <div class = notifications v-if = "showNotifications">
+                        
+                    </div>
+                    
+                    <button id="sign-in" class="account-button" type="button" @click="signOut()">Sign Out</button>
+                </div>
+            
+            
+<!-- Project Select screen -->
+                <div v-if = "screen === 'main'">
+                    <h1>Projects</h1>
+                    <button @click = "screen = 'create'">Create a new project!</button>
+                    <div class = "container">
+                        <div class = "row">
+                           
+                                <div v-for = "project in projects" class = "col-sm-12 col-md-6 col-lg-4" class = "projectcard">
+                                    <h1>{{project.name}}</h1>
+                                    <p>{{project.owner}}</p>
+                                    <button @click = "enterProject(project.id)">Enter</button>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+<!-- Project Creation Screen-->
+                <div v-if = "screen === 'create'">
+                    <ul>
+                        <li>Project Name: <input v-model = "newProjName" placeholder = "project name"></li>
+                        
+                        <li><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr> <input type = "number" v-model = "newK" placeholder = "k value"></li>
+                        
+                        <li>Who can view: <select v-model = "newPrivacy">
+                            <option><abbr title = "Only users you invite may view">private</abbr></option>
+                            <option><abbr title = "Anybody may view">public</abbr></option>
+                        </select></li>
+                        
+                        <li>Who can edit: <select v-model = "newEditPrivs">
+                            <option><abbr title = "Only you can edit">owner only</abbr></option>
+                            <option><abbr title = "Anybody may edit when invited">private</abbr></option>
+                            <option><abbr title = "Anybody may edit">public</abbr></option>
+                        </select></li>
+                        
+                        <li>Will you be an agent in this system? <select v-model = "newOwnerIsAgent">
+                            <option><abbr title = "Only you can edit">No</abbr></option>
+                            <option><abbr title = "Anybody may edit when invited">Yes</abbr></option>
+                         </select></li>
+                        
+
+                        <button @click = "createProject()">Create</button>
+                    </ul>
+                </div>
+    
+<!-- Project Main Menu-->
+            <div v-if= "screen === 'project'" >
+                <h1>{{currentProject.name}}</h1>
+                <button id = "gameButton" @click = "screen = 'game'">Add a Game!</button>
+                <div class = "container">
+                    <div class = "row">
+                        <div id = "agents" class = "col-sm-12 col-md-6">
+                            <h2>Leaderboard:</h2>
+                            <button @click = "editAgentsOn = !editAgentsOn">Edit</button>
+                            <ul class = "leaderboard" v-if = "ff">
+                                <li v-for = "agent in sortedAgents">{{agent.name}}: {{agent.elo}} <input type = "number" v-if= "editAgentsOn" v-model = "oldAgentElo"> <button  v-if= "editAgentsOn" @click = "changeElo(agent.id)">Change Elo</button></li>
+                                
+                                <li v-if = "editAgentsOn">
+                                    <input placeholder = "new agent name" v-model = "newAgent">
+                                    <select v-model = "newAgentUser">
+                                        <option>Not a User</option>
+                                        <option v-for = "user in userList">{{user.name}}</option>
+                                    </select>
+                                    <button @click = addAgent()>Add Agent</button></li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div id = ""  class = "col-sm-12 col-md-6">
+                            <h2>Users:</h2>
+                            <button @click = "editUsersOn = !editUsersOn">Add Users</button>
+                            <ul class = "user List" v-if = "ff">
+                                <li v-for = "user in userList">{{user.name}}</li>
+                                
+                                <li v-if = "editUsersOn">
+                                    <input placeholder = "new user" v-model = "newUserName">
+                                    <button @click = "addUser()">Add User</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+<!-- Enter New Game-->
+            <div v-if= "screen === 'game'">
+                <h1>Enter New Game</h1>
+                <div class = "container">
+                    <div class = "row">
+                        <div id = "agent1" class = "col-sm-12 col-md-6">
+                            <select v-model = "gameAgent1">
+                                    <option>Select an Agent</option>
+                                    <option v-for = "agent in agentList" :value= "agent">{{agent.name}}</option>
+                            </select>
+                            <p v-if = "gameAgent1 !== 'Select an Agent'">Agent Elo: {{gameAgent1.elo}}</p>
+                            <p v-if= "gameAgent2 !== 'Select an Agent' && gameAgent1 !== 'Select an Agent' && gameAgent1 !== gameAgent2"> Expected to win {{p1WinRate}} of games.</p>
+                            <table v-if= "gameAgent2 !== 'Select an Agent' && gameAgent1 !== 'Select an Agent' && gameAgent1 !== gameAgent2">
+                                <tr>
+                                    <th>Outcome  </th>
+                                    <th>New Score</th>
+                                </tr>
+                                <tr>
+                                    <td>Win</td>
+                                    <td>{{p1WinChange}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>{{p1LossChange}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tie</td>
+                                    <td>{{p1TieChange}}</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div id = "agent2" class = "col-sm-12 col-md-6">
+                             <select v-model = "gameAgent2">
+                                    <option>Select an Agent</option>
+                                    <option v-for = "agent in agentList" :value = "agent">{{agent.name}}</option>
+                            </select>
+                            <p v-if = "gameAgent2 !== 'Select an Agent'">Agent Elo: {{gameAgent2.elo}}</p>
+                            <p v-if= "gameAgent2 !== 'Select an Agent' && gameAgent1 !== 'Select an Agent' && gameAgent1 !== gameAgent2"> Expected to win {{p2WinRate}} of games.</p>
+                            <table v-if= "gameAgent2 !== 'Select an Agent' && gameAgent1 !== 'Select an Agent' && gameAgent1 !== gameAgent2">
+                                <tr>
+                                    <th>Outcome  </th>
+                                    <th>New Score</th>
+                                </tr>
+                                <tr>
+                                    <td>Win</td>
+                                    <td>{{p2WinChange}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Loss</td>
+                                    <td>{{p2LossChange}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tie</td>
+                                    <td>{{p2TieChange}}</td>
+                                </tr>
+                            </table>
+                        </div >
+                        <div id = "matchupgraphs" class = "col-12">
+                        </div>
+                        <div v-if= "gameAgent2 !== 'Select an Agent' && gameAgent1 !== 'Select an Agent' && gameAgent1 !== gameAgent2" id = "input" class = "col-12"> 
+                            <select v-model = "outcome">
+                                <option :value = "'a1'">Win for {{gameAgent1.name}}</option>
+                                <option :value = "'a2'">Win for {{gameAgent2.name}}</option>
+                                <option :value = "'t'">Tie</option>
+                            </select>
+                            <button @click = "resolveOutcome()">Add Game</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+<!-- Project Options Menu-->
+            <div v-if= "screen === 'projectOptions'">
+                <h1>Options</h1>
+            </div>
+
+<!-- Agents View-->
+            <div v-if= "screen === 'projectOptions'">
+                <h1>Agents</h1>
+            </div>
+            
+<!-- Stats View -->
+            <div v-if= "screen === 'projectOptions'">
+                <h1>Project Statistics</h1>
+            </div>
+            
+        </div>
+    </body>
+<!--
+    <footer>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    </footer>  
+-->
+</html>
