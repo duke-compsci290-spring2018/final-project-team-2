@@ -1,0 +1,2234 @@
+{
+  "games" : {
+    "BBBaeson1524948366976BaesonRyan1525008427817" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : 0,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 0,
+      "id" : "BBBaeson1524948366976BaesonRyan1525008427817",
+      "newa1" : 1000,
+      "newa2" : 1000,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "t",
+      "time" : 1525008427823
+    },
+    "BBBaeson1524948366976BaesonRyan1525009925923" : {
+      "a1" : {
+        "elo" : 939,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : 45,
+      "a2" : {
+        "elo" : 1061,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : -45,
+      "id" : "BBBaeson1524948366976BaesonRyan1525009925923",
+      "newa1" : 984,
+      "newa2" : 1016,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525009925927
+    },
+    "BBBaeson1524948366976BaesonRyan1525010421075" : {
+      "a1" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -31,
+      "a2" : {
+        "elo" : 717,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 31,
+      "id" : "BBBaeson1524948366976BaesonRyan1525010421075",
+      "newa1" : 1252,
+      "newa2" : 748,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "t",
+      "time" : 1525010421079
+    },
+    "BBBaeson1524948366976BaesonRyan1525010530911" : {
+      "a1" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -65,
+      "a2" : {
+        "elo" : 717,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 65,
+      "id" : "BBBaeson1524948366976BaesonRyan1525010530911",
+      "newa1" : 1218,
+      "newa2" : 782,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525010530917
+    },
+    "BBBaeson1524948366976BaesonRyan1525010538027" : {
+      "a1" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -65,
+      "a2" : {
+        "elo" : 717,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 65,
+      "id" : "BBBaeson1524948366976BaesonRyan1525010538027",
+      "newa1" : 1218,
+      "newa2" : 782,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525010538028
+    },
+    "BBBaeson1524948366976BaesonRyan1525012236364" : {
+      "a1" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -40,
+      "a2" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 40,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012236364",
+      "newa1" : 936,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525012236370
+    },
+    "BBBaeson1524948366976BaesonRyan1525012239747" : {
+      "a1" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -40,
+      "a2" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 40,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012239747",
+      "newa1" : 936,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525012239749
+    },
+    "BBBaeson1524948366976BaesonRyan1525012242213" : {
+      "a1" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -40,
+      "a2" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 40,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012242213",
+      "newa1" : 936,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525012242215
+    },
+    "BBBaeson1524948366976BaesonRyan1525012244465" : {
+      "a1" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -40,
+      "a2" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 40,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012244465",
+      "newa1" : 936,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525012244467
+    },
+    "BBBaeson1524948366976BaesonRyan1525012248805" : {
+      "a1" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : -40,
+      "a2" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : 40,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012248805",
+      "newa1" : 936,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525012248807
+    },
+    "BBBaeson1524948366976BaesonRyan1525012466980" : {
+      "a1" : {
+        "elo" : 955,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a1Change" : 48,
+      "a2" : {
+        "elo" : 1112,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : -48,
+      "id" : "BBBaeson1524948366976BaesonRyan1525012466980",
+      "newa1" : 1003,
+      "newa2" : 1064,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525012466981
+    },
+    "BBBaeson1524948366976RyanBaeson1525009393698" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 34,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -34,
+      "id" : "BBBaeson1524948366976RyanBaeson1525009393698",
+      "newa1" : 1034,
+      "newa2" : 966,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525009393701
+    },
+    "BBBaeson1524948366976RyanBaeson1525009676091" : {
+      "a1" : {
+        "elo" : 1034,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 27,
+      "a2" : {
+        "elo" : 966,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -27,
+      "id" : "BBBaeson1524948366976RyanBaeson1525009676091",
+      "newa1" : 1061,
+      "newa2" : 939,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525009676095
+    },
+    "BBBaeson1524948366976RyanBaeson1525010163808" : {
+      "a1" : {
+        "elo" : 1016,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : -37,
+      "a2" : {
+        "elo" : 984,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : 37,
+      "id" : "BBBaeson1524948366976RyanBaeson1525010163808",
+      "newa1" : 979,
+      "newa2" : 1021,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525010163810
+    },
+    "BBBaeson1524948366976RyanBaeson1525010171825" : {
+      "a1" : {
+        "elo" : 1016,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : -3,
+      "a2" : {
+        "elo" : 984,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : 3,
+      "id" : "BBBaeson1524948366976RyanBaeson1525010171825",
+      "newa1" : 1013,
+      "newa2" : 987,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "t",
+      "time" : 1525010171826
+    },
+    "BBBaeson1524948366976RyanBaeson1525011744741" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 61,
+      "a2" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -61,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011744741",
+      "newa1" : 973,
+      "newa2" : 1222,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525011744745
+    },
+    "BBBaeson1524948366976RyanBaeson1525011747935" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 27,
+      "a2" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -27,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011747935",
+      "newa1" : 939,
+      "newa2" : 1256,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "t",
+      "time" : 1525011747937
+    },
+    "BBBaeson1524948366976RyanBaeson1525011753002" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 61,
+      "a2" : {
+        "elo" : 1283,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -61,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011753002",
+      "newa1" : 973,
+      "newa2" : 1222,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525011753004
+    },
+    "BBBaeson1524948366976RyanBaeson1525011927800" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 55,
+      "a2" : {
+        "elo" : 1161,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -55,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011927800",
+      "newa1" : 967,
+      "newa2" : 1106,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525011927804
+    },
+    "BBBaeson1524948366976RyanBaeson1525011933081" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : -13,
+      "a2" : {
+        "elo" : 1161,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : 13,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011933081",
+      "newa1" : 899,
+      "newa2" : 1174,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525011933082
+    },
+    "BBBaeson1524948366976RyanBaeson1525011938860" : {
+      "a1" : {
+        "elo" : 912,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 55,
+      "a2" : {
+        "elo" : 1161,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -55,
+      "id" : "BBBaeson1524948366976RyanBaeson1525011938860",
+      "newa1" : 967,
+      "newa2" : 1106,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525011938866
+    },
+    "BBBaeson1524948366976RyanBaeson1525012432452" : {
+      "a1" : {
+        "elo" : 1112,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : 21,
+      "a2" : {
+        "elo" : 976,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Baeson",
+        "user" : "Baeson"
+      },
+      "a2Change" : -21,
+      "id" : "BBBaeson1524948366976RyanBaeson1525012432452",
+      "newa1" : 1133,
+      "newa2" : 955,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "BBBaeson1524948366976",
+        "kval" : "68",
+        "name" : "BB",
+        "owner" : "Baeson",
+        "view" : "public"
+      },
+      "result" : "a1",
+      "time" : 1525012432455
+    },
+    "Napoleonic WarsRyan1525023498929AustriaFrance1525023808389" : {
+      "a1" : {
+        "elo" : 985,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a1Change" : -14,
+      "a2" : {
+        "elo" : 1015,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : 14,
+      "id" : "Napoleonic WarsRyan1525023498929AustriaFrance1525023808389",
+      "newa1" : 971,
+      "newa2" : 1029,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525023808390
+    },
+    "Napoleonic WarsRyan1525023498929AustriaFrance1525024127547" : {
+      "a1" : {
+        "elo" : 958,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a1Change" : -12,
+      "a2" : {
+        "elo" : 1025,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : 12,
+      "id" : "Napoleonic WarsRyan1525023498929AustriaFrance1525024127547",
+      "newa1" : 946,
+      "newa2" : 1037,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024127547
+    },
+    "Napoleonic WarsRyan1525023498929AustriaFrance1525024171756" : {
+      "a1" : {
+        "elo" : 946,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a1Change" : -11,
+      "a2" : {
+        "elo" : 1037,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : 11,
+      "id" : "Napoleonic WarsRyan1525023498929AustriaFrance1525024171756",
+      "newa1" : 935,
+      "newa2" : 1048,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024171756
+    },
+    "Napoleonic WarsRyan1525023498929FranceAustria1525023801166" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a2Change" : -15,
+      "id" : "Napoleonic WarsRyan1525023498929FranceAustria1525023801166",
+      "newa1" : 1015,
+      "newa2" : 985,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525023801166
+    },
+    "Napoleonic WarsRyan1525023498929FranceAustria1525023832374" : {
+      "a1" : {
+        "elo" : 1029,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 13,
+      "a2" : {
+        "elo" : 971,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a2Change" : -13,
+      "id" : "Napoleonic WarsRyan1525023498929FranceAustria1525023832374",
+      "newa1" : 1042,
+      "newa2" : 958,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525023832374
+    },
+    "Napoleonic WarsRyan1525023498929FranceAustria1525024215952" : {
+      "a1" : {
+        "elo" : 1032,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -19,
+      "a2" : {
+        "elo" : 935,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a2Change" : 19,
+      "id" : "Napoleonic WarsRyan1525023498929FranceAustria1525024215952",
+      "newa1" : 1013,
+      "newa2" : 954,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024215952
+    },
+    "Napoleonic WarsRyan1525023498929FranceAustria1525024397123" : {
+      "a1" : {
+        "elo" : 1018,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -18,
+      "a2" : {
+        "elo" : 954,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a2Change" : 18,
+      "id" : "Napoleonic WarsRyan1525023498929FranceAustria1525024397123",
+      "newa1" : 1000,
+      "newa2" : 972,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024397123
+    },
+    "Napoleonic WarsRyan1525023498929FranceAustria1525024421625" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 972,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Austria",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "Napoleonic WarsRyan1525023498929FranceAustria1525024421625",
+      "newa1" : 1014,
+      "newa2" : 958,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024421625
+    },
+    "Napoleonic WarsRyan1525023498929FranceGreat Britain1525024182536" : {
+      "a1" : {
+        "elo" : 1048,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -16,
+      "a2" : {
+        "elo" : 1017,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a2Change" : 16,
+      "id" : "Napoleonic WarsRyan1525023498929FranceGreat Britain1525024182536",
+      "newa1" : 1032,
+      "newa2" : 1033,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024182536
+    },
+    "Napoleonic WarsRyan1525023498929FranceGreat Britain1525024667148" : {
+      "a1" : {
+        "elo" : 1049,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -14,
+      "a2" : {
+        "elo" : 1063,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a2Change" : 14,
+      "id" : "Napoleonic WarsRyan1525023498929FranceGreat Britain1525024667148",
+      "newa1" : 1035,
+      "newa2" : 1077,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024667148
+    },
+    "Napoleonic WarsRyan1525023498929FrancePrussia1525024301079" : {
+      "a1" : {
+        "elo" : 1038,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -3,
+      "a2" : {
+        "elo" : 973,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a2Change" : 3,
+      "id" : "Napoleonic WarsRyan1525023498929FrancePrussia1525024301079",
+      "newa1" : 1035,
+      "newa2" : 976,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "t",
+      "time" : 1525024301079
+    },
+    "Napoleonic WarsRyan1525023498929FrancePrussia1525024588870" : {
+      "a1" : {
+        "elo" : 1042,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 12,
+      "a2" : {
+        "elo" : 976,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a2Change" : -12,
+      "id" : "Napoleonic WarsRyan1525023498929FrancePrussia1525024588870",
+      "newa1" : 1054,
+      "newa2" : 964,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024588870
+    },
+    "Napoleonic WarsRyan1525023498929FrancePrussia1525024695168" : {
+      "a1" : {
+        "elo" : 1035,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 12,
+      "a2" : {
+        "elo" : 964,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a2Change" : -12,
+      "id" : "Napoleonic WarsRyan1525023498929FrancePrussia1525024695168",
+      "newa1" : 1047,
+      "newa2" : 952,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024695168
+    },
+    "Napoleonic WarsRyan1525023498929FrancePrussia1525024709289" : {
+      "a1" : {
+        "elo" : 1033,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -18,
+      "a2" : {
+        "elo" : 952,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a2Change" : 18,
+      "id" : "Napoleonic WarsRyan1525023498929FrancePrussia1525024709289",
+      "newa1" : 1015,
+      "newa2" : 970,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024709289
+    },
+    "Napoleonic WarsRyan1525023498929FranceRussia1525024292456" : {
+      "a1" : {
+        "elo" : 1040,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -2,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Russia",
+        "user" : ""
+      },
+      "a2Change" : 2,
+      "id" : "Napoleonic WarsRyan1525023498929FranceRussia1525024292456",
+      "newa1" : 1038,
+      "newa2" : 1002,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "t",
+      "time" : 1525024292456
+    },
+    "Napoleonic WarsRyan1525023498929FranceRussia1525024524495" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1002,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Russia",
+        "user" : ""
+      },
+      "a2Change" : -15,
+      "id" : "Napoleonic WarsRyan1525023498929FranceRussia1525024524495",
+      "newa1" : 1015,
+      "newa2" : 987,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024524495
+    },
+    "Napoleonic WarsRyan1525023498929FranceRussia1525024547608" : {
+      "a1" : {
+        "elo" : 1015,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 987,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Russia",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "Napoleonic WarsRyan1525023498929FranceRussia1525024547608",
+      "newa1" : 1029,
+      "newa2" : 973,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024547608
+    },
+    "Napoleonic WarsRyan1525023498929FranceRussia1525024566114" : {
+      "a1" : {
+        "elo" : 1029,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 13,
+      "a2" : {
+        "elo" : 973,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Russia",
+        "user" : ""
+      },
+      "a2Change" : -13,
+      "id" : "Napoleonic WarsRyan1525023498929FranceRussia1525024566114",
+      "newa1" : 1042,
+      "newa2" : 960,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024566114
+    },
+    "Napoleonic WarsRyan1525023498929FranceRussia1525024595028" : {
+      "a1" : {
+        "elo" : 1054,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : 11,
+      "a2" : {
+        "elo" : 960,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Russia",
+        "user" : ""
+      },
+      "a2Change" : -11,
+      "id" : "Napoleonic WarsRyan1525023498929FranceRussia1525024595028",
+      "newa1" : 1065,
+      "newa2" : 949,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024595028
+    },
+    "Napoleonic WarsRyan1525023498929FranceSpain1525024367417" : {
+      "a1" : {
+        "elo" : 1035,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a1Change" : -17,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 8,
+        "isUser" : false,
+        "name" : "Spain",
+        "user" : ""
+      },
+      "a2Change" : 17,
+      "id" : "Napoleonic WarsRyan1525023498929FranceSpain1525024367417",
+      "newa1" : 1018,
+      "newa2" : 1017,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024367417
+    },
+    "Napoleonic WarsRyan1525023498929Great BritainFrance1525024106734" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a1Change" : 17,
+      "a2" : {
+        "elo" : 1042,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : -17,
+      "id" : "Napoleonic WarsRyan1525023498929Great BritainFrance1525024106734",
+      "newa1" : 1017,
+      "newa2" : 1025,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024106734
+    },
+    "Napoleonic WarsRyan1525023498929Great BritainFrance1525024495009" : {
+      "a1" : {
+        "elo" : 1033,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 1014,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "Napoleonic WarsRyan1525023498929Great BritainFrance1525024495009",
+      "newa1" : 1047,
+      "newa2" : 1000,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024495009
+    },
+    "Napoleonic WarsRyan1525023498929Great BritainFrance1525024657965" : {
+      "a1" : {
+        "elo" : 1047,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a1Change" : 16,
+      "a2" : {
+        "elo" : 1065,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : -16,
+      "id" : "Napoleonic WarsRyan1525023498929Great BritainFrance1525024657965",
+      "newa1" : 1063,
+      "newa2" : 1049,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024657965
+    },
+    "Napoleonic WarsRyan1525023498929Great BritainFrance1525024702507" : {
+      "a1" : {
+        "elo" : 1077,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Great Britain",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 1047,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "Napoleonic WarsRyan1525023498929Great BritainFrance1525024702507",
+      "newa1" : 1091,
+      "newa2" : 1033,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1525024702507
+    },
+    "Napoleonic WarsRyan1525023498929PrussiaFrance1525024245939" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a1Change" : -14,
+      "a2" : {
+        "elo" : 1013,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : 14,
+      "id" : "Napoleonic WarsRyan1525023498929PrussiaFrance1525024245939",
+      "newa1" : 986,
+      "newa2" : 1027,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024245939
+    },
+    "Napoleonic WarsRyan1525023498929PrussiaFrance1525024251578" : {
+      "a1" : {
+        "elo" : 986,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Prussia",
+        "user" : ""
+      },
+      "a1Change" : -13,
+      "a2" : {
+        "elo" : 1027,
+        "id" : 0,
+        "isUser" : false,
+        "name" : "France",
+        "user" : ""
+      },
+      "a2Change" : 13,
+      "id" : "Napoleonic WarsRyan1525023498929PrussiaFrance1525024251578",
+      "newa1" : 973,
+      "newa2" : 1040,
+      "project" : {
+        "created" : "2018-04-29 13:38",
+        "edit" : "owner only",
+        "id" : "Napoleonic WarsRyan1525023498929",
+        "kval" : 30,
+        "name" : "Napoleonic Wars",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525024251578
+    },
+    "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955064452" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Daniel's Evil Twin",
+        "user" : ""
+      },
+      "a1Change" : 16,
+      "a2" : {
+        "elo" : 1015,
+        "id" : 5,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a2Change" : -16,
+      "id" : "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955064452",
+      "newa1" : 1016,
+      "newa2" : 999,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955064452
+    },
+    "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955096144" : {
+      "a1" : {
+        "elo" : 1016,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Daniel's Evil Twin",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 999,
+        "id" : 5,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955096144",
+      "newa1" : 1030,
+      "newa2" : 985,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955096144
+    },
+    "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955116918" : {
+      "a1" : {
+        "elo" : 1030,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Daniel's Evil Twin",
+        "user" : ""
+      },
+      "a1Change" : -17,
+      "a2" : {
+        "elo" : 985,
+        "id" : 5,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a2Change" : 17,
+      "id" : "SmeshRyan1524925947512Daniel's Evil TwinDaniel1524955116918",
+      "newa1" : 1013,
+      "newa2" : 1002,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1524955116918
+    },
+    "SmeshRyan1524925947512DanielDaniel's Evil Twin1524954931932" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 5,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1000,
+        "isUser" : false,
+        "name" : "Daniel's Evil Twin",
+        "user" : ""
+      },
+      "a2Change" : -15,
+      "id" : "SmeshRyan1524925947512DanielDaniel's Evil Twin1524954931932",
+      "newa1" : 1015,
+      "newa2" : 985,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524954931932
+    },
+    "SmeshRyan1524925947512DanielDaniel's Evil Twin1524955421913" : {
+      "a1" : {
+        "elo" : 1002,
+        "id" : 5,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1013,
+        "id" : 6,
+        "isUser" : false,
+        "name" : "Daniel's Evil Twin",
+        "user" : ""
+      },
+      "a2Change" : -15,
+      "id" : "SmeshRyan1524925947512DanielDaniel's Evil Twin1524955421913",
+      "newa1" : 1017,
+      "newa2" : 998,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955421913
+    },
+    "SmeshRyan1524925947512DanielGary Kasparov1524954668880" : {
+      "a1" : {
+        "elo" : 1000,
+        "isUser" : false,
+        "name" : "Daniel",
+        "user" : ""
+      },
+      "a1Change" : 16,
+      "a2" : {
+        "elo" : 1023,
+        "id" : 4,
+        "isUser" : false,
+        "name" : "Gary Kasparov",
+        "user" : ""
+      },
+      "a2Change" : -16,
+      "id" : "SmeshRyan1524925947512DanielGary Kasparov1524954668880",
+      "newa1" : 1016,
+      "newa2" : 1007,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524954668881
+    },
+    "SmeshRyan1524925947512HaleyHungryBox1524955264971" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 7,
+        "isUser" : false,
+        "name" : "Haley",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 3,
+        "isUser" : false,
+        "name" : "HungryBox",
+        "user" : ""
+      },
+      "a2Change" : -15,
+      "id" : "SmeshRyan1524925947512HaleyHungryBox1524955264971",
+      "newa1" : 1015,
+      "newa2" : 985,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955264971
+    },
+    "SmeshRyan1524925947512HaleyPloo1524955196204" : {
+      "a1" : {
+        "elo" : 1000,
+        "isUser" : false,
+        "name" : "Haley",
+        "user" : ""
+      },
+      "a1Change" : 23,
+      "a2" : {
+        "elo" : 1214,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ploo",
+        "user" : "Ploo"
+      },
+      "a2Change" : -23,
+      "id" : "SmeshRyan1524925947512HaleyPloo1524955196204",
+      "newa1" : 1023,
+      "newa2" : 1191,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955196205
+    },
+    "SmeshRyan1524925947512JacquesHououin Kyoma1524955306972" : {
+      "a1" : {
+        "elo" : 1015,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Jacques",
+        "user" : ""
+      },
+      "a1Change" : 14,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 8,
+        "isUser" : false,
+        "name" : "Hououin Kyoma",
+        "user" : ""
+      },
+      "a2Change" : -14,
+      "id" : "SmeshRyan1524925947512JacquesHououin Kyoma1524955306972",
+      "newa1" : 1029,
+      "newa2" : 986,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a1",
+      "time" : 1524955306972
+    },
+    "SmeshRyan1524925947512JacquesRyan1524949300913" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 2,
+        "isUser" : false,
+        "name" : "Jacques",
+        "user" : ""
+      },
+      "a1Change" : 15,
+      "a2" : {
+        "elo" : 1792,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a2Change" : -15,
+      "id" : "SmeshRyan1524925947512JacquesRyan1524949300913",
+      "newa1" : 1015,
+      "newa2" : 1777,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "t",
+      "time" : 1524949300913
+    },
+    "SmeshRyan1524925947512PlooGary Kasparov1524948795336" : {
+      "a1" : {
+        "elo" : 1208,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ploo",
+        "user" : "Ploo"
+      },
+      "a1Change" : -23,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 4,
+        "isUser" : false,
+        "name" : "Gary Kasparov",
+        "user" : ""
+      },
+      "a2Change" : 23,
+      "id" : "SmeshRyan1524925947512PlooGary Kasparov1524948795336",
+      "newa1" : 1185,
+      "newa2" : 1023,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1524948795336
+    },
+    "SmeshRyan1524925947512RyanPloo1524954626297" : {
+      "a1" : {
+        "elo" : 1777,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : -29,
+      "a2" : {
+        "elo" : 1185,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ploo",
+        "user" : "Ploo"
+      },
+      "a2Change" : 29,
+      "id" : "SmeshRyan1524925947512RyanPloo1524954626297",
+      "newa1" : 1748,
+      "newa2" : 1214,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Smesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1524954626297
+    },
+    "SmeshRyan1524925947512RyanPloo1525013688672" : {
+      "a1" : {
+        "elo" : 1748,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "Ryan",
+        "user" : "Ryan"
+      },
+      "a1Change" : -29,
+      "a2" : {
+        "elo" : 1191,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "Ploo",
+        "user" : "Ploo"
+      },
+      "a2Change" : 29,
+      "id" : "SmeshRyan1524925947512RyanPloo1525013688672",
+      "newa1" : 1719,
+      "newa2" : 1220,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "owner only",
+        "id" : "SmeshRyan1524925947512",
+        "kval" : 30,
+        "name" : "Schmesh",
+        "owner" : "Ryan",
+        "view" : "private"
+      },
+      "result" : "a2",
+      "time" : 1525013688675
+    },
+    "pp1524973742973pzz1525005705770" : {
+      "a1" : {
+        "elo" : 1000,
+        "id" : 0,
+        "isUser" : true,
+        "name" : "p",
+        "user" : "p"
+      },
+      "a1Change" : -15,
+      "a2" : {
+        "elo" : 1000,
+        "id" : 1,
+        "isUser" : false,
+        "name" : "zz",
+        "user" : ""
+      },
+      "a2Change" : 15,
+      "id" : "pp1524973742973pzz1525005705770",
+      "newa1" : 985,
+      "newa2" : 1015,
+      "project" : {
+        "created" : "2018-04-28",
+        "edit" : "public",
+        "id" : "pp1524973742973",
+        "kval" : 30,
+        "name" : "p",
+        "owner" : "p",
+        "view" : "public"
+      },
+      "result" : "a2",
+      "time" : 1525005705770
+    }
+  },
+  "hist" : {
+    "1525023239614" : {
+      "mes" : "sign in by Ryan",
+      "time" : "2018-04-29"
+    },
+    "1525023349849" : {
+      "mes" : "sign in by Ryan",
+      "time" : "2018-04-29 13:35"
+    },
+    "1525023442653" : {
+      "mes" : "sign in by Ryan",
+      "time" : "2018-04-29 13:37"
+    },
+    "1525023457328" : {
+      "mes" : "sign in by Ryan",
+      "time" : "2018-04-29 13:37"
+    },
+    "1525023498932" : {
+      "mes" : "new project: RyanbyRyan",
+      "time" : "2018-04-29 13:38"
+    },
+    "1525023648618" : {
+      "mes" : "sign in by Ryan",
+      "time" : "2018-04-29 13:40"
+    }
+  },
+  "projects" : {
+    "BBBaeson1524948366976" : {
+      "agents" : {
+        "array" : [ {
+          "elo" : 955,
+          "id" : 0,
+          "isUser" : true,
+          "name" : "Baeson",
+          "user" : "Baeson"
+        }, {
+          "elo" : 1144,
+          "id" : 1,
+          "isUser" : false,
+          "name" : "Ryan",
+          "user" : "Ryan"
+        } ]
+      },
+      "created" : "2018-04-28",
+      "edit" : "owner only",
+      "id" : "BBBaeson1524948366976",
+      "kval" : "68",
+      "name" : "BB",
+      "owner" : "Baeson",
+      "users" : {
+        "arr" : [ {
+          "isOwner" : true,
+          "name" : "Baeson",
+          "role" : "admin"
+        }, {
+          "isOwner" : false,
+          "name" : "Ryan",
+          "role" : "user"
+        } ]
+      },
+      "view" : "public"
+    },
+    "Napoleonic WarsRyan1525023498929" : {
+      "agents" : {
+        "array" : [ {
+          "elo" : 1015,
+          "id" : 0,
+          "isUser" : false,
+          "name" : "France",
+          "user" : ""
+        }, {
+          "elo" : 958,
+          "id" : 1,
+          "isUser" : false,
+          "name" : "Austria",
+          "user" : ""
+        }, {
+          "elo" : 1091,
+          "id" : 2,
+          "isUser" : false,
+          "name" : "Great Britain",
+          "user" : ""
+        }, {
+          "elo" : 1000,
+          "id" : 3,
+          "isUser" : false,
+          "name" : "The Mameluks",
+          "user" : ""
+        }, {
+          "elo" : 1017,
+          "id" : 4,
+          "isUser" : false,
+          "name" : "Spain",
+          "user" : ""
+        }, {
+          "elo" : 1000,
+          "id" : 5,
+          "isUser" : false,
+          "name" : "Smaller German States",
+          "user" : ""
+        }, {
+          "elo" : 970,
+          "id" : 6,
+          "isUser" : false,
+          "name" : "Prussia",
+          "user" : ""
+        }, {
+          "elo" : 949,
+          "id" : 7,
+          "isUser" : false,
+          "name" : "Russia",
+          "user" : ""
+        } ]
+      },
+      "created" : "2018-04-29 13:38",
+      "edit" : "owner only",
+      "id" : "Napoleonic WarsRyan1525023498929",
+      "kval" : 30,
+      "name" : "Napoleonic Wars",
+      "owner" : "Ryan",
+      "users" : {
+        "arr" : [ {
+          "isOwner" : true,
+          "name" : "Ryan",
+          "role" : "admin"
+        } ]
+      },
+      "view" : "public"
+    },
+    "SmeshRyan1524925947512" : {
+      "agents" : {
+        "array" : [ {
+          "elo" : 1748,
+          "id" : 0,
+          "isUser" : true,
+          "name" : "Ryan",
+          "user" : "Ryan"
+        }, {
+          "elo" : 1220,
+          "id" : 1,
+          "isUser" : false,
+          "name" : "Ploo",
+          "user" : "Ploo"
+        }, {
+          "elo" : 1029,
+          "id" : 2,
+          "isUser" : false,
+          "name" : "Jacques",
+          "user" : ""
+        }, {
+          "elo" : 985,
+          "id" : 3,
+          "isUser" : false,
+          "name" : "HungryBox",
+          "user" : ""
+        }, {
+          "elo" : 1007,
+          "id" : 4,
+          "isUser" : false,
+          "name" : "Gary Kasparov",
+          "user" : ""
+        }, {
+          "elo" : 1017,
+          "id" : 5,
+          "isUser" : false,
+          "name" : "Daniel",
+          "user" : ""
+        }, {
+          "elo" : 998,
+          "id" : 6,
+          "isUser" : false,
+          "name" : "Daniel's Evil Twin",
+          "user" : ""
+        }, {
+          "elo" : 1015,
+          "id" : 7,
+          "isUser" : false,
+          "name" : "Haley",
+          "user" : ""
+        }, {
+          "elo" : 986,
+          "id" : 8,
+          "isUser" : false,
+          "name" : "Hououin Kyoma",
+          "user" : ""
+        } ]
+      },
+      "created" : "2018-04-28",
+      "edit" : "owner only",
+      "id" : "SmeshRyan1524925947512",
+      "kval" : 30,
+      "name" : "Schmesh",
+      "owner" : "Ryan",
+      "users" : {
+        "arr" : [ {
+          "isOwner" : true,
+          "name" : "Ryan",
+          "role" : "admin"
+        }, {
+          "isOwner" : "false",
+          "name" : "Ploo",
+          "role" : "user"
+        } ]
+      },
+      "view" : "private"
+    }
+  },
+  "users" : {
+    "Baeson" : {
+      "id" : "Baeson",
+      "name" : "Baeson",
+      "notifications" : 0,
+      "password" : "smesh",
+      "photo" : "./data/pic.png",
+      "role" : "user"
+    },
+    "Birb " : {
+      "id" : "Birb ",
+      "name" : "Birb ",
+      "notifications" : 0,
+      "password" : "birblr",
+      "photo" : "./data/pic.png",
+      "role" : "user"
+    },
+    "Ploo" : {
+      "id" : "Ploo",
+      "name" : "Ploo",
+      "notifications" : 0,
+      "password" : "bloo",
+      "photo" : "./data/pic.png",
+      "role" : "user"
+    },
+    "Ryan" : {
+      "id" : "Ryan",
+      "name" : "Ryan",
+      "notifications" : 0,
+      "password" : "password",
+      "photo" : "./data/pic.png",
+      "role" : "admin"
+    },
+    "p" : {
+      "id" : "p",
+      "name" : "p",
+      "notifications" : 0,
+      "password" : "p",
+      "photo" : "./data/pic.png",
+      "role" : "user"
+    }
+  }
+}

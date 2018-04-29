@@ -21,3 +21,9 @@ changing the elo directly works properly, but sometimes doesn't properly update 
 
 any extra credit features included in your web site
 nope
+
+
+Also, for reference, the admin is:
+Username: Ryan
+password: password
+and the backup JSON is named rjf19-elo-export.json in the repository

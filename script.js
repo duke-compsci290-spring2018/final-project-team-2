@@ -6,7 +6,8 @@
 
 // Initialize Firebase
 
-var RussianHackerMode= false; // if true, can see and edit everything
+var RussianHackerMode= false; // if true, can see and edit everything except participate in a game because it wouldn't make sense
+
 
   var config = {
     apiKey: "AIzaSyDPMdXtVxtM6TlH64-T0pSfV4r6emvkz94",
@@ -410,6 +411,7 @@ var app = new Vue({
                 time: presenttime(),
                 mes: "new project: "+ app.loggedIn.name +"by"+app.loggedIn.name
             });
+            
             this.screen = "main";
             
         },
@@ -432,6 +434,7 @@ var app = new Vue({
                 app.editK= val.kval;
                 app.editPrivacy=  val.view;
                 app.editEditPrivs = val.edit;
+                app.agentList = [];
                 if(val.agents !== undefined){
                     app.agentList = val.agents.array;
                 };
@@ -508,6 +511,7 @@ var app = new Vue({
                             
 
                         });
+            app.newAgentUser = '';
         },
         changeElo(id){
             app.ff = false;
