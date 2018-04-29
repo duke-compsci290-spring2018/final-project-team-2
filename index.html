@@ -160,6 +160,15 @@
                             </ul>
                         </div>
                         
+                        <div id = "projectcard" class = "col-sm-12 col-md-5">
+                            <h2>Statistics:</h2>
+                                <ul>
+                                    <li>Spread: {{spread}}</li>
+                                    <li>Average: {{avg}}</li>
+                                    <li>Mode: {{mode}}</li>
+                                </ul>
+                        </div>
+                        
                         <div id = "projectcard"  class = "col-sm-12 col-md-5">
                             <h2>Users:</h2>
                             <button v-if= "allowEdit()" @click = "editUsersOn = !editUsersOn">Add Users</button>
@@ -171,9 +180,9 @@
                                     <button @click = "addUser()">Add User</button></li>
                             </ul>
                         </div>
-                        
+
                         <div id = "projectcard" class = "col-sm-12 col-md-5">
-                            <h2>Games:</h2>
+                            <h2>Recent Games:</h2>
                             <ul>
                                 <li v-for = "game in sortedGames" v-if = "game.project.id === currentProject.id">
                                     <h4>{{game.a1.name}}({{game.a1.elo}}) vs. {{game.a2.name}}({{game.a2.elo}})</h4>
@@ -183,6 +192,7 @@
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>    
 
@@ -355,6 +365,11 @@
                         
 
                         <button @click = "editProject()">Save Changes</button>
+                        
+                        <p>If you'd just like a good demonstration of how a real system might work, you can type in a number of simulated games and the system will create them for you, although only the records of 10 games will be saved.
+                        </p>
+                        Number of Games: <input v-model = "numFabricate" type = "number">
+                        <button @click = "fabricateDataset()">Fabricate Dataset</button>
                     </ul>
             </div>
 
@@ -390,6 +405,7 @@
                 <p>First, you need to choose your settings. You can choose whatever name you'd like. The K-value is just a measure of how volatile your system is. Generally, 30 is used for low-level players and 15 is used for players at the very top. The privacy settings choose both who can view the project, as well as who can make edits to it. You can also choose if you would like to be an agent (player) in the system, but if not, you can always add yourself later.  You can modify these settings in the project options.</p>
                 <p>Next, you need to populate your project with some agents by clicking the "edit" button on the agents tab. An agent can either be a user or not, but if they're a user, you need to first add them to your project under the "user" list by typing in their name. If you have permission to edit the project, you will be able to edit the users' elo (you may need to refresh the page to see the changes).  Once you have at least two agents, you can input the results of games by clicking the "add a game" button on the project's menu. Once you're on that menu, you can choose two agents and input the result of a game between them and see what sort of changes would result.  Once you're ready, you can add the game and the resulting changes will be calculated and added to the system.</p>
                 <p>If an agent is also a user, they can register games by themselves with other users by going to the "Participate in a Game" selection. By registering a game with another user this way, the other user will get a notification (found under the notifications tab) that they can use to verify the game as valid.  Once both players have validated the game, it is added as normal.</p>
+                <p>If you'd like a quick demonstration of how it may work in the real world, you can go to your project's options and have your computer simulate up to 99 games with your current agents.  As is the case in reality, agents with higher Elo are more likely to continue to accumulate Elo, while agents with lower Elo tend to continue losing Elo.</p>
                 
             </div>
 <!--    Admin View-->

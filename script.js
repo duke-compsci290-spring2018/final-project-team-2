@@ -18,22 +18,18 @@ var RussianHackerMode= false; // if true, can see and edit everything except par
     messagingSenderId: "783957939775"
   };
 
-function moveFbRecord(oldRef, newRef) {    // thank you to GitHub user katowulf at https://gist.github.com/katowulf/6099042
-     oldRef.once('value', function(snap)  {  //takes the snapshot value at the old ref
-          newRef.set( snap.val(), function(error) {  // and sets the value at the new ref, and
-               if( !error ) {  oldRef.remove(); }// If it's not an error, goes ahead and sets the old ref to null
-          });
-     });
-}
+
 
 function calculateExpectedResult(elo1,elo2){
     adjustedDifference = (elo2-elo1)/400;
-    return 1/(1+Math.pow(10,adjustedDifference))
+    return 1/(1+Math.pow(10,adjustedDifference));
 }
 
 function calculateNewElo(elo1, elo2, result, kval) {
     return elo1+kval*(result-calculateExpectedResult(elo1,elo2));
 }
+
+
 
 
 
@@ -145,7 +141,11 @@ var app = new Vue({
         editPrivacy: "",
         editProjName: "",
         editEditPrivs: "",
-        notifications: []
+        notifications: [],
+        
+        numFabricate: 0,
+        recordMe: true
+        
         
         
         
@@ -173,13 +173,13 @@ var app = new Vue({
         },
         p1WinRate(){
             p1Percent = calculateExpectedResult(app.gameAgent1.elo,app.gameAgent2.elo);
-            p1Percent = Math.round(p1Percent*100)/100
-            return (p1Percent*100)+"%"
+            p1Percent = Math.round(p1Percent*100)/100;
+            return (p1Percent*100)+"%";
         },
         p2WinRate(){
             p1Percent = calculateExpectedResult(app.gameAgent2.elo,app.gameAgent1.elo);
-            p1Percent = Math.round(p1Percent*100)/100
-            return (p1Percent*100)+"%"
+            p1Percent = Math.round(p1Percent*100)/100;
+            return (p1Percent*100)+"%";
         },
         p1WinChange(){
             return Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,1, app.currentProject.kval));
@@ -194,25 +194,32 @@ var app = new Vue({
             return Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,0, app.currentProject.kval));
         },
         p1TieChange(){
-            return Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,.5, app.currentProject.kval));
+            return Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,0.5, app.currentProject.kval));
         },
         p2TieChange(){
-            return Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,.5, app.currentProject.kval));
+            return Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,0.5, app.currentProject.kval));
         },
         sortedGames(){
             
             var gg = [];
-            for (game in app.games){
-                gg.push(app.games[game]);
+            var num = 10;
+            
+            for (var game in app.games){
+                if (app.games[game].project.id == app.currentProject.id){
+                    gg.push(app.games[game]);
+                }
             }
             gg.sort(function(a,b){
                 return b.time-a.time;
-            })
+            });
+            if (gg.length > 10){
+                return gg.splice(0,10);
+            }
             return gg;
             
         },
         userIsAgent(){
-            for (agent in app.agentList){
+            for (var agent in app.agentList){
                 if (agent.user === app.loggedIn.name){
                     return true;
                 }
@@ -220,7 +227,7 @@ var app = new Vue({
             return false;
         },
         playerAgent(){
-            for (agent in app.agentList){
+            for (var agent in app.agentList){
                 if (app.agentList[agent].user === app.loggedIn.name){
                     app.gameAgent1 = app.agentList[agent];
                     return app.agentList[agent];
@@ -233,10 +240,10 @@ var app = new Vue({
             if (!app.logged){
                 return [];
             }
-            var arr = []
+            var arr = [];
             var ref = db.ref("users/"+app.loggedIn.id+"/messages");
             ref.once('value',function(snap){
-                for (message in snap.val()){
+                for (var message in snap.val()){
                     arr.push(snap.val()[message]);
                 }
             });
@@ -244,7 +251,69 @@ var app = new Vue({
                 return b.time-a.time;
             });
             return arr;
+        },
+        p1MatchupRate(){
+            var p1Wins = 0;
+            for (var game in app.games){
+                if (app.games[game]){
+                    
+                }
+            }
+        },
+        spread(){
+            var listo = [];
+            var max = 0;
+            var min = 1000000000;
+            if (app.agentList.length === 0){
+                return 0;
+            }
+            for (agent in app.agentList){
+                if (app.agentList[agent].elo > max){
+                    max = app.agentList[agent].elo;
+                }
+                if (app.agentList[agent].elo< min){
+                    min = app.agentList[agent].elo;
+                }
+                
+            }
+            
+            return max - min;
+            
+        },
+        avg(){
+            if (app.agentList.length === 0){
+                return 0;
+            }
+            var listo = [];
+            var sum = 0;
+            for (agent in app.agentList){
+                sum = sum + app.agentList[agent].elo;
+                
+            }
+            return sum/app.agentList.length;
+            
+        },
+        mode(){
+             var listo = [];
+
+            for (agent in app.agentList){
+                listo.push(app.agentList[agent].elo);
+            }
+            
+            if (listo.length === 0){
+                return 0;
+            }
+            listo.sort(function(a,b){
+                return a-b;
+            });
+            if (listo.length%2 === 0){
+                return (listo[listo.length/2]+listo[(listo.length/2)-1])/2;
+            }
+            if (listo.length%2 === 1){
+                return listo[(listo.length+1)/2-1];
+            }
         }
+        
         
 
         
@@ -252,7 +321,45 @@ var app = new Vue({
     
     
     methods: {
-        
+        fabricateDataset(){ // plays a bunch of games
+            var len = app.agentList.length;
+            var p1 = 0;
+            var p2 = 0;
+            var chance = 0;
+            if (app.numFabricate > 100){
+                alert("maybe not quite that many games");
+                return 0;
+            }
+            app.recordMe = false;
+            while (app.numFabricate > 0){
+                if (app.numFabricate < 10){
+                    app.recordMe = true;
+                }
+                p1 = Math.floor(Math.random() * len);
+                p2 = Math.floor(Math.random()*len);
+                while(p1 === p2){
+                    p2 = Math.floor(Math.random()*len);
+                }
+                app.gameAgent1 = app.agentList[p1];
+                app.gameAgent2 = app.agentList[p2];
+                chance = calculateExpectedResult(app.gameAgent1.elo, app.gameAgent2.elo);
+                
+                if (chance < Math.random()){
+                    app.outcome = "a2";
+                }
+                else{
+                    app.outcome = "a1";
+                }
+                
+                app.resolveOutcome();
+                
+                app.numFabricate = app.numFabricate - 1;
+                
+            }
+            app.recordMe = true;
+            
+            
+        },
         signIn(){ // if everything is valid, signs in to the account
             var go = 0;
             var oy = 0;
@@ -264,7 +371,7 @@ var app = new Vue({
                     oy = oy + 1;
                     if (this.users[child].password !== app.oldpassword){
                         alert("incorrect password");
-                        return 0
+                        return 0;
                     }
                     app.loggedIn.index = child;
                     nots = this.users[child].notifications;
@@ -286,7 +393,7 @@ var app = new Vue({
             }
             app.notifications = [];
             db.ref('users/'+app.loggedIn.id+'/messages').once('value',function(snap){
-                for (message in snap.val()){
+                for (var message in snap.val()){
                     app.notifications.push(snap.val()[message]);
                    
                 }
@@ -358,7 +465,7 @@ var app = new Vue({
                 alert("Please log in to create a project.");
                 return 0;
             }
-            if (app.newProjName != "" && app.newK > 0){
+            if (app.newProjName !== "" && app.newK > 0){
                 var id = app.newProjName+app.loggedIn.name+Date.now();
                 var now = presenttime();
                 db.ref("projects/"+id).set({
@@ -382,7 +489,7 @@ var app = new Vue({
                     arr
                 });
                 if (app.newOwnerIsAgent == "Yes"){
-                    var arr = [];
+                    arr = [];
                     arr.push({
                             id: 0,
                            name: app.loggedIn.name,
@@ -437,7 +544,7 @@ var app = new Vue({
                 app.agentList = [];
                 if(val.agents !== undefined){
                     app.agentList = val.agents.array;
-                };
+                }
                 
                 app.userList = val.users.arr;
                 
@@ -469,7 +576,7 @@ var app = new Vue({
                             isOwner: false
 //                            Add Invited
                         });
-            var ll = app.userList.length -1
+            var ll = app.userList.length -1;
             var ref = db.ref("projects/"+app.currentProject.id+"/users/arr/"+ll);
             ref.set({
                            name: app.newUserName,
@@ -491,7 +598,7 @@ var app = new Vue({
                 alert ("please enter a name");
                 return 0;
             }
-            var ll = app.agentList.length
+            var ll = app.agentList.length;
             app.agentList.push({
                            name: app.newAgent,
                             elo: 1000,
@@ -500,7 +607,7 @@ var app = new Vue({
                             id:ll
 
                         });
-            var ll = app.agentList.length -1
+            ll = app.agentList.length -1;
             var ref = db.ref("projects/"+app.currentProject.id+"/agents/array/"+ll);
             ref.set({
                            name: app.newAgent,
@@ -517,7 +624,7 @@ var app = new Vue({
             app.ff = false;
             var ref = db.ref("projects/"+app.currentProject.id+"/agents/array/"+id);
             ref.once('value',function(snap){
-                var ll = snap.val()
+                var ll = snap.val();
                 ref.set({
                     elo: parseInt(app.oldAgentElo),
                    name: ll.name,
@@ -570,19 +677,21 @@ var app = new Vue({
             });
             var id = app.currentProject.id+app.gameAgent1.name+app.gameAgent2.name+Date.now();
             var gamesRef = db.ref("games/"+id);
-            gamesRef.set({
-                a1: app.gameAgent1,
-                a2: app.gameAgent2,
-                newa1: newA1,
-                newa2: newA2,
-                a1Change: a1Change,
-                a2Change: a2Change,
-                time: Date.now(),
-                id: id,
-                project: app.currentProject,
-                result: app.outcome
-                
-            });
+            if (app.recordMe){
+                gamesRef.set({
+                    a1: app.gameAgent1,
+                    a2: app.gameAgent2,
+                    newa1: newA1,
+                    newa2: newA2,
+                    a1Change: a1Change,
+                    a2Change: a2Change,
+                    time: Date.now(),
+                    id: id,
+                    project: app.currentProject,
+                    result: app.outcome
+
+                });
+            }
             var ref = db.ref("projects/"+app.currentProject.id);
             
             ref.once('value', function(snap){
@@ -675,7 +784,7 @@ var app = new Vue({
             var check = 0;
             usersRef.once('value', function(snap){
                 check = false;
-                for (soul in snap.val()){
+                for (var soul in snap.val()){
                     if (snap.val()[soul].name === app.loggedIn.name){
                         check = true;
                         break;
@@ -736,7 +845,7 @@ var app = new Vue({
             var check = 0;
             agentsRef.once('value', function(snap){
                 check = false;
-                for (soul in snap.val()){
+                for (var soul in snap.val()){
                     if (snap.val()[soul].user === app.loggedIn.name){
                         check = true;
                         break;
