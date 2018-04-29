@@ -4,85 +4,43 @@
 #results{
     object-position: center; 
 }
-/*
 
-html {
-    font: 200%;
+#app {
+/*    font-size: 1%;*/
+/*    hopefully this will be relatively visable */
+    padding: 2%;
+    background-color:lightseagreen;  
+    height: 90%;
+	}
+.login{
+    background-color:lightgoldenrodyellow;
+}
+html{
+    background-color: lightgoldenrodyellow;
+}
+footer{
+    background-color:lightgoldenrodyellow;
+    padding:2%;
     
-    background-color:beige;
-	}
+}
 
-header {
-    position:relative;
-    bottom:20px;
-    font: arial;
-    text-align: center;
-    color: #222222;
-    text-align: center;
-    text-decoration: overline underline;
-    text-decoration-color: red;
-    color:lime;
-    display:flex;
-    flex-flow: column;
-    background:#111155;
-    border-color:red;
-    border-style:double;
-    border-width: thick;
+#agent1{
+    background-color: skyblue;
+    padding: 2%;
+    
 }
-button{
-    color: black;
+#agent2{
+    background-color: palevioletred;
+    padding: 2%
+    
 }
-header ul{
-    background: #224444;
-    align-content: center;
-    border-color: green;
-    border-width:medium;
-    border-bottom-style: dotted;
-    border-top-style: dotted;;
-}
-.navigation{
 
+#projectcard{
+    background-color: lightgoldenrodyellow;
+    margin: 1%;
+    padding: .5%;
 }
-#warning{
-    color: red;
+
+table {
+    border-spacing: 5px;
 }
-.navigation ul{
-    list-style: none;
-    font-size: 200%;
-    display:flex;
-    flex-wrap: wrap;
-    list-style: none;
-    flex-direction: row;
-    justify-content: space-around;
-    color: red;
-}
-body { 
-	font: 75%;
-	line-height: 2;
-	color: black;
-	}
-li{
-    color: #111111;
-}
-footer {
-    color:blue;
-    text-align: center;
-}
-.paragraph{ 
-    color: #111111;
-	}
-#toppic{
-    position: relative;
-    left: 20px;
-}
-.page-wrapper { 
-    margin:5%;
-    font-family:serif;
-    font-size: 100%;
-	position: relative;
-    background: inherit;
-	}
-a:link {color:#0000ff;}
-a:visited {color:#ff0077;}
-a:hover {color:#ffcccc;}
-*/

@@ -5,6 +5,9 @@
  */
 
 // Initialize Firebase
+
+var RussianHackerMode= false; // if true, can see and edit everything
+
   var config = {
     apiKey: "AIzaSyDPMdXtVxtM6TlH64-T0pSfV4r6emvkz94",
     authDomain: "rjf19-elo.firebaseapp.com",
@@ -87,7 +90,9 @@ var app = new Vue({
         loggedIn:{
                 name: "Anonymous",
                 photo: "./data/pic.png",
-                id: -1
+                id: -1,
+                notifications: 0
+                
             } ,
         
         newusername: "",
@@ -132,7 +137,14 @@ var app = new Vue({
         
         gameAgent1: "Select an Agent",
         gameAgent2: "Select an Agent",
-        outcome: ""
+        outcome: "",
+        
+        editK: 0,
+        editPrivacy: "",
+        editProjName: "",
+        editEditPrivs: ""
+        
+        
         
         
         
@@ -194,6 +206,24 @@ var app = new Vue({
             })
             return gg;
             
+        },
+        userIsAgent(){
+            for (agent in app.agentList){
+                if (agent.user === app.loggedIn.name){
+                    return true;
+                }
+            }
+            return false;
+        },
+        playerAgent(){
+            for (agent in app.agentList){
+                if (app.agentList[agent].user === app.loggedIn.name){
+                    app.gameAgent1 = app.agentList[agent];
+                    return app.agentList[agent];
+                }
+               
+                
+            }
         }
         
 
@@ -207,6 +237,7 @@ var app = new Vue({
             var go = 0;
             var oy = 0;
             var roll = 0;
+            var nots = 0;
             for (var child in this.users){
                 
                 if (this.users[child].name === app.oldusername){
@@ -216,7 +247,7 @@ var app = new Vue({
                         return 0
                     }
                     app.loggedIn.index = child;
-   
+                    nots = this.users[child].notifications;
                     go = this.users[child].photo.url;
                     roll = this.users[child].role;
                     app.loggedIn.id = this.users[child].id;
@@ -234,6 +265,7 @@ var app = new Vue({
             app.loggedIn.photo = go;
             app.role = roll;
             app.logged = true;
+            app.loggedIn.notifications = nots;
         },
         
         signOut(){
@@ -269,14 +301,15 @@ var app = new Vue({
                         password: app.newpassword,
                         photo: "./data/pic.png",
                         id: id,
-                        role: "user"
+                        role: "user",
+                        notifications: 0
                     
                     });
             app.logged = true;
             app.loggedIn.name = app.newusername;
             app.loggedIn.id = id;
             app.loggedIn.photo = "./data/pic.png";
-            app.loggedIn.role = "user";
+            app.role = "user";
             
         },
         createProject(){ // c
@@ -351,7 +384,11 @@ var app = new Vue({
                         view: val.view,     
                         owner: val.owner
                     };
-                
+                app.editProjName = val.name;
+                app.editK= val.kval;
+                app.editPrivacy=  val.view;
+                app.editEditPrivs = val.edit;
+
                 app.agentList = val.agents.array;
                 app.userList = val.users.arr;
                 
@@ -380,7 +417,7 @@ var app = new Vue({
             app.userList.push({
                            name: app.newUserName,
                            role: "user",
-                            isOwner: "false"
+                            isOwner: false
 //                            Add Invited
                         });
             var ll = app.userList.length -1
@@ -388,7 +425,7 @@ var app = new Vue({
             ref.set({
                            name: app.newUserName,
                            role: "user",
-                            isOwner: "false"
+                            isOwner: false
                             // Add Invited
 
                         });
@@ -405,11 +442,13 @@ var app = new Vue({
                 alert ("please enter a name");
                 return 0;
             }
+            var ll = app.agentList.length
             app.agentList.push({
                            name: app.newAgent,
                             elo: 1000,
                             isUser: tisUser,
-                            user: user
+                            user: user,
+                            id:ll
 
                         });
             var ll = app.agentList.length -1
@@ -472,6 +511,7 @@ var app = new Vue({
             }
             a1Ref = db.ref("projects/"+app.currentProject.id+"/agents/array/"+app.gameAgent1.id);
             a2Ref = db.ref("projects/"+app.currentProject.id+"/agents/array/"+app.gameAgent2.id);
+
             a1Ref.update({
                 elo: newA1
             });
@@ -503,7 +543,175 @@ var app = new Vue({
             app.gameAgent1 = "Select an Agent";
             app.gameAgent2 = "Select an Agent";
             
+        },
+        sendOutcome(){
+            if (app.outcome === ""){
+                alert("please enter the outcome of the game");
+                return 0;
+            }
+            var newA1 = 0;
+            var newA2 = 0;
+            var a1Change = 0;
+            var a2Change = 0;
+            
+            if (app.outcome === "a1"){
+                newA1 = Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,1, app.currentProject.kval));
+                a1Change = newA1-app.gameAgent1.elo;
+                newA2 = Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,0, app.currentProject.kval));
+                a2Change = newA2-app.gameAgent2.elo;
+                
+            }
+            else if (app.outcome === "a2"){
+                newA1 = Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,0, app.currentProject.kval));
+                a1Change = newA1-app.gameAgent1.elo;
+                newA2 = Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,1, app.currentProject.kval));
+                a2Change = newA2-app.gameAgent2.elo;
+            }
+            else{
+                newA1 = Math.round(calculateNewElo(app.gameAgent1.elo,app.gameAgent2.elo,0.5, app.currentProject.kval));
+                a1Change = newA1-app.gameAgent1.elo;
+                newA2 = Math.round(calculateNewElo(app.gameAgent2.elo,app.gameAgent1.elo,0.5, app.currentProject.kval));
+                a2Change = newA2-app.gameAgent2.elo;
+            }
+            var id = app.currentProject.id+app.gameAgent1.name+app.gameAgent2.name+Date.now();
+            a1String = ("projects/"+app.currentProject.id+"/agents/array/"+app.gameAgent1.id);
+            a2String = ("projects/"+app.currentProject.id+"/agents/array/"+app.gameAgent2.id);
+            var message = ("Accept results of match vs. "+app.gameAgent1.name+" ("+app.loggedIn.name+")?");
+            
+            recipientRef = db.ref("users/"+app.gameAgent2.user+"/messages/"+id);
+            notesRef = db.ref("users/"+app.gameAgent2.user+"/notifications");
+            
+            notesRef.once('value',function(snap){
+                
+                notesRef.set(snap.val() + 1);
+            });
+            
+           recipientRef.set({
+                   message: message,
+                   a1string:a1String,
+                   a2string:a2String,
+                a1: app.gameAgent1,
+                a2: app.gameAgent2,
+                newa1: newA1,
+                newa2: newA2,
+                a1Change: a1Change,
+                a2Change: a2Change,
+                time: Date.now(),
+                id: id,
+                project: app.currentProject,
+                result: app.outcome
+               
+           });
+
+            app.gameAgent1 = "Select an Agent";
+            app.gameAgent2 = "Select an Agent";
+        },
+        allowView(project){
+            if (RussianHackerMode){
+                return true;
+            }
+            if (project.view === "public"){
+                return true;
+            }
+            if (app.role === "guest"){
+                return false;
+            }
+            if (app.role === "admin"){
+                return true;
+            }
+            if (project.owner === app.loggedIn.name){
+                return true;
+            }
+            var usersRef = db.ref("projects/"+ project.id+"/users/arr");
+            var check = 0;
+            usersRef.once('value', function(snap){
+                check = false;
+                for (soul in snap.val()){
+                    if (snap.val()[soul].name === app.loggedIn.name){
+                        check = true;
+                        break;
+                    }
+                }
+                
+            });
+            return check;
+        },
+        allowEdit(){
+            if (RussianHackerMode){
+                return true;
+            }
+            if (app.currentProject.edit === "public"){
+                return true;
+            }
+            if (app.role === "guest"){
+                return false;
+            }
+            if (app.role === "admin"){
+                return true;
+            }
+            if (app.currentProject.edit === "owner only"){
+                if (app.currentProject.owner === app.loggedIn.name){
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        },
+       
+        allowGame(){
+            if (RussianHackerMode){
+                return true;
+            }
+            if (app.currentProject.edit === "public"){
+                return true;
+            }
+            if (app.role === "guest"){
+                return false;
+            }
+            if (app.role === "admin"){
+                return true;
+            }
+            if (app.currentProject.edit === "owner only"){
+                if (app.currentProject.owner === app.loggedIn.name){
+                    return true;
+                }
+                
+                return false;
+            }
+            return false;
+                
+        
+        },
+        allowParticipate(){
+            var agentsRef = db.ref("projects/"+ app.currentProject.id+"/agents/array");
+            var check = 0;
+            agentsRef.once('value', function(snap){
+                check = false;
+                for (soul in snap.val()){
+                    if (snap.val()[soul].user === app.loggedIn.name){
+                        check = true;
+                        break;
+                    }
+                }
+                
+            });
+            
+            return check;
+            
+        },
+        editProject(){
+            
+            db.ref("projects/"+app.currentProject.id).update({
+                name: app.editProjName,
+                kval: app.editK,
+                edit: app.editEditPrivs,
+                view: app.editPrivacy,   
+                
+            });
+            app.enterProject(app.currentProject.id);
         }
+        
+        
         
         
     }
