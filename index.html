@@ -144,7 +144,7 @@
                 <div class = "container">
                     <div class = "row">
                         <div id = "projectcard" class = "col-sm-12 col-md-5">
-                            <h2>Leaderboard:</h2>
+                            <h2>Agents:</h2>
                             <button v-if= "allowEdit()" @click = "editAgentsOn = !editAgentsOn">Edit</button>
                             <ul  class = "leaderboard" v-if = "ff">
                                 <li v-for = "agent in sortedAgents">{{agent.name}}: {{agent.elo}} <input type = "number" v-if= "editAgentsOn" v-model = "oldAgentElo"> <button  v-if= "editAgentsOn" @click = "changeElo(agent.id)">Change Elo</button></li>

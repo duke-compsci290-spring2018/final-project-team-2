@@ -635,6 +635,12 @@ var app = new Vue({
                 app.ff = true;
             });
             app.agentList[id].elo = app.oldAgentElo;
+            var ref = db.ref("projects/"+app.currentProject.id);
+            ref.once('value', function(snap){
+                val = snap.val();
+                app.agentList = val.agents.array;
+            
+            });
 
         },
         resolveOutcome(){
