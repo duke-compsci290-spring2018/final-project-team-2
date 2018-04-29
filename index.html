@@ -36,32 +36,38 @@
                             <div class="login">
                                  <div class = "row">
                                     <div id = "signupbar" class = "col-sm-12 col-md-4">
-                                        <label>New Username</label>
-                                        <input class="new-username"
+                                        <label for = "newuser" >New Username</label>
+                                        <input id = "newuser" class="new-username"
                                            placeholder="new username"
                                            v-model="newusername">
-                                        <label>New Password</label>
-                                        <input class="new-password"
+                                        <br />
+                                        <label for = "newpass">New Password</label>
+                                        <input id = "newpass" class="new-password"
                                             type = "password"
                                            placeholder="new user password"
                                            v-model="confirmpassword">
-                                        <label>Confirm Password</label>
-                                        <input class="confirm-password"
+                                        <br />
+                                        <label for = "confpass">Confirm Password</label>
+                                        
+                                        
+                                        <input id = "confpass" class="confirm-password"
                                             type = "password"
                                            placeholder="enter password again"
                                            v-model="newpassword">
+                                        <br />
                                         <button id="sign-up" class="account-button" type="button" @click="signUp()">Sign Up</button>
                                     </div>
 
                                     <div id = "loginbar" class = "col-sm-12 col-md-4">
-                                        <label>Returning Username</label>
-                                        <input class="old-username"
+                                        <label for = "retuser">Returning Username</label>
+                                        <input id = "retuser" class="old-username"
                                            placeholder="returning username"
                                            v-model="oldusername">
-                                            <label>Returning Password</label>
-                                        <input class="oldpassword" type = "password"
+                                            <label for = "retpass">Returning Password</label>
+                                        <input id = "retpass" class="oldpassword" type = "password"
                                            placeholder="returning user password"
                                            v-model="oldpassword">
+                                        <br />
                                         <button id="sign-in" class="account-button" type="button" @click="signIn()">Sign In</button>
                                         
                                     </div>
