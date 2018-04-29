@@ -44,3 +44,9 @@ footer{
 table {
     border-spacing: 5px;
 }
+
+#help{
+    background-color: lightgoldenrodyellow;
+    margin: 1%;
+    padding: .5%;
+}

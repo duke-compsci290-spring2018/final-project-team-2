@@ -58,7 +58,7 @@ function presenttime(){  // just gets the present time, I lifted this from my tr
     if (mm < 10){
         mm = "0" + mm;
     }
-    return (yy+"-"+mm+"-"+dd);
+    return (yy+"-"+mm+"-"+dd +" " + hr + ':' + min);
 }
 
 
@@ -71,6 +71,7 @@ var projectsRef = db.ref('projects');
 var usersRef = db.ref('users');
 var gamesRef = db.ref('games');
 var agentsRef = db.ref('agents');
+var histRef = db.ref('hist');
 // connect Firebase to Vue
 Vue.use(VueFire);
 
@@ -82,7 +83,7 @@ var app = new Vue({
 
     
     data: {  
-        screen: "main",
+        screen: "help",
         role: "guest",
         logged: false,
         
@@ -154,7 +155,8 @@ var app = new Vue({
         projects: projectsRef,
         users: usersRef,
         games: gamesRef,
-        agents: agentsRef
+        agents: agentsRef,
+        hist: histRef
     },
 
     // methods that can be called from within HTML code, typically through input elements
@@ -274,6 +276,9 @@ var app = new Vue({
 
 
             }
+
+                
+            
             if (oy !== 1){
                 alert("user not found");
                 return 0;
@@ -292,6 +297,10 @@ var app = new Vue({
             app.role = roll;
             app.logged = true;
             app.loggedIn.notifications = nots;
+            db.ref("hist/"+Date.now()).set({
+                time: presenttime(),
+                mes: "sign in by "+app.loggedIn.name
+            });
         },
         
         signOut(){
@@ -337,6 +346,10 @@ var app = new Vue({
             app.loggedIn.id = id;
             app.loggedIn.photo = "./data/pic.png";
             app.role = "user";
+            db.ref("hist/"+Date.now()).set({
+                time: presenttime(),
+                mes: "new account: "+app.loggedIn.name
+            });
             
         },
         createProject(){ // c
@@ -393,6 +406,10 @@ var app = new Vue({
                     };
 
             }
+            db.ref("hist/"+Date.now()).set({
+                time: presenttime(),
+                mes: "new project: "+ app.loggedIn.name +"by"+app.loggedIn.name
+            });
             this.screen = "main";
             
         },
@@ -415,8 +432,10 @@ var app = new Vue({
                 app.editK= val.kval;
                 app.editPrivacy=  val.view;
                 app.editEditPrivs = val.edit;
-
-                app.agentList = val.agents.array;
+                if(val.agents !== undefined){
+                    app.agentList = val.agents.array;
+                };
+                
                 app.userList = val.users.arr;
                 
             });

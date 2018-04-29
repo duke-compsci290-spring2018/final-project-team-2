@@ -36,13 +36,16 @@
                             <div class="login">
                                  <div class = "row">
                                     <div id = "signupbar" class = "col-sm-12 col-md-4">
+                                        <label>New Username</label>
                                         <input class="new-username"
                                            placeholder="new username"
                                            v-model="newusername">
+                                        <label>New Password</label>
                                         <input class="new-password"
                                             type = "password"
                                            placeholder="new user password"
                                            v-model="confirmpassword">
+                                        <label>Confirm Password</label>
                                         <input class="confirm-password"
                                             type = "password"
                                            placeholder="enter password again"
@@ -51,14 +54,16 @@
                                     </div>
 
                                     <div id = "loginbar" class = "col-sm-12 col-md-4">
-                                        <p><input class="old-username"
+                                        <label>Returning Username</label>
+                                        <input class="old-username"
                                            placeholder="returning username"
                                            v-model="oldusername">
+                                            <label>Returning Password</label>
                                         <input class="oldpassword" type = "password"
                                            placeholder="returning user password"
                                            v-model="oldpassword">
                                         <button id="sign-in" class="account-button" type="button" @click="signIn()">Sign In</button>
-                                        </p>
+                                        
                                     </div>
                                 </div> 
                                 </div>
@@ -75,11 +80,13 @@
 
 
                         <button id="sign-in" class="account-button" type="button" @click="signOut()">Sign Out</button>
+                        <button v-if="role === 'admin'" @click="screen = 'admin'">App History</button>
                     </div>
 
                 </div>
-                    <button v-if = "screen !== 'project' && currentProject.id !== ''" @click = "screen = 'project'">Return to Project Menu</button>
-                    <button v-if = "screen !== 'main'" @click = "screen = 'main'">Return to Project Select</button>
+                    <button v-if = "screen !== 'project' && currentProject.id !== ''" @click = "screen = 'project'">Project Menu</button>
+                    <button v-if = "screen !== 'main'" @click = "screen = 'main'">Project Select</button>
+                    <button v-if = "screen !== 'help'" @click = "screen = 'help'">Help</button>
 <!-- Project Select screen -->
                 <div v-if = "screen === 'main'">
                     <h1>Projects</h1>
@@ -99,22 +106,22 @@
 <!-- Project Creation Screen-->
                 <div v-if = "screen === 'create'">
                     <ul>
-                        <li>Project Name: <input v-model = "newProjName" placeholder = "project name"></li>
+                        <li><label>Project Name</label> <input v-model = "newProjName" placeholder = "project name"></li>
                         
-                        <li><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr> <input type = "number" v-model = "newK" placeholder = "k value"></li>
+                        <li><label><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr></label> <input type = "number" v-model = "newK" placeholder = "k value"></li>
                         
-                        <li>Who can view: <select v-model = "newPrivacy">
+                        <li><label>Who can view:</label> <select v-model = "newPrivacy">
                             <option><abbr title = "Only users you invite may view">private</abbr></option>
                             <option><abbr title = "Anybody may view">public</abbr></option>
                         </select></li>
                         
-                        <li>Who can edit: <select v-model = "newEditPrivs">
+                        <li><label>Who can edit:</label> <select v-model = "newEditPrivs">
                             <option><abbr title = "Only you can edit">owner only</abbr></option>
                             <option><abbr title = "Anybody may edit when invited">private</abbr></option>
                             <option><abbr title = "Anybody may edit">public</abbr></option>
                         </select></li>
                         
-                        <li>Will you be an agent in this system? <select v-model = "newOwnerIsAgent">
+                        <li><label>Will you be an agent in this system?</label> <select v-model = "newOwnerIsAgent">
                             <option><abbr title = "Only you can edit">No</abbr></option>
                             <option><abbr title = "Anybody may edit when invited">Yes</abbr></option>
                          </select></li>
@@ -366,9 +373,30 @@
                 
             </div>
             
-<!-- Stats View -->
-            <div v-if= "screen === 'statistics'">
-                <h1>Project Statistics</h1>
+<!-- Help View -->
+            <div id = "help" v-if= "screen === 'help'">
+                <h1>Ryan Ferner's Elo Ranking System (System)</h1>
+                <h3>What is this?</h3>
+                <p>I'm glad you asked!  Elo is a system by which to rank agents (players) in a zero-sum game.  It is analogous to 'power rankings' in the NCAA. Since it's pretty difficult to tack a perfectly objective measurement onto something like skill, you can infer from an agent's wins and losses about how good they are compared to the rest of the agents.  This website can be used by anyone to create such a system.</p>
+                <h3>How to I use this?</h3>
+                <p>It's simple! First, you need to create an account with the bar above.  Remember that this website isn't super secure, so don't use an important password. When you aren't logged in, you can only view public projects and can't make any edits. Once you're logged in, you can:
+                </p>
+                <ul>
+                    <li>Create a project (there's a pretty conspicuous button for it on the project select screen)</li>
+                    <li>Be added to a friend's project (more on that later)</li>
+                    <li>Edit projects that other users have chosen to keep open</li>
+                </ul>
+                <h3>What can I do with a project?</h3>
+                <p>First, you need to choose your settings. You can choose whatever name you'd like. The K-value is just a measure of how volatile your system is. Generally, 30 is used for low-level players and 15 is used for players at the very top. The privacy settings choose both who can view the project, as well as who can make edits to it. You can also choose if you would like to be an agent (player) in the system, but if not, you can always add yourself later.  You can modify these settings in the project options.</p>
+                <p>Next, you need to populate your project with some agents. An agent can either be a user or not, but if they're a user, you need to first add them to your project under the "user" list by typing in their name. If you have permission to edit the project, you will be able to edit the users' elo (you may need to refresh the page to see the changes).  Once you have at least two agents, you can input the results of games by clicking the "add a game" button on the project's menu. Once you're on that menu, you can choose two agents and input the result of a game between them and see what sort of changes would result.  Once you're ready, you can add the game and the resulting changes will be calculated and added to the system.</p>
+                <p>If an agent is also a user, they can register games by themselves with other users by going to the "Participate in a Game" selection. By registering a game with another user this way, the other user will get a notification (found under the notifications tab) that they can use to verify the game as valid.  Once both players have validated the game, it is added as normal.</p>
+                
+            </div>
+<!--    Admin View-->
+            <div id = "help" v-if= "screen === 'admin'">
+                <div v-for = "event in hist">
+                    {{event.mes}} at {{event.time}}
+                </div>
             </div>
             
         </div>
