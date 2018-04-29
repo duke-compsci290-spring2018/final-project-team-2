@@ -511,7 +511,7 @@ var app = new Vue({
                             
 
                         });
-            app.newAgentUser = '';
+            app.newAgent = '';
         },
         changeElo(id){
             app.ff = false;
