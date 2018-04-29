@@ -142,7 +142,8 @@ var app = new Vue({
         editK: 0,
         editPrivacy: "",
         editProjName: "",
-        editEditPrivs: ""
+        editEditPrivs: "",
+        notifications: []
         
         
         
@@ -224,6 +225,22 @@ var app = new Vue({
                
                 
             }
+        },
+        sortNotifications(){
+            if (!app.logged){
+                return [];
+            }
+            var arr = []
+            var ref = db.ref("users/"+app.loggedIn.id+"/messages");
+            ref.once('value',function(snap){
+                for (message in snap.val()){
+                    arr.push(snap.val()[message]);
+                }
+            });
+            arr.sort(function(a,b){
+                return b.time-a.time;
+            });
+            return arr;
         }
         
 
@@ -261,6 +278,15 @@ var app = new Vue({
                 alert("user not found");
                 return 0;
             }
+            app.notifications = [];
+            db.ref('users/'+app.loggedIn.id+'/messages').once('value',function(snap){
+                for (message in snap.val()){
+                    app.notifications.push(snap.val()[message]);
+                   
+                }
+                
+            });
+            
             app.loggedIn.name = app.oldusername;
             app.loggedIn.photo = go;
             app.role = roll;
@@ -274,6 +300,7 @@ var app = new Vue({
             app.logged = false;
             app.role = "guest";
             app.screen = "main";
+            app.notifications = [];
         },
         
         signUp(){  // if everything is valid, makes a new account
@@ -578,8 +605,8 @@ var app = new Vue({
             a2String = ("projects/"+app.currentProject.id+"/agents/array/"+app.gameAgent2.id);
             var message = ("Accept results of match vs. "+app.gameAgent1.name+" ("+app.loggedIn.name+")?");
             
-            recipientRef = db.ref("users/"+app.gameAgent2.user+"/messages/"+id);
-            notesRef = db.ref("users/"+app.gameAgent2.user+"/notifications");
+            var recipientRef = db.ref("users/"+app.gameAgent2.user+"/messages/"+id);
+            var notesRef = db.ref("users/"+app.gameAgent2.user+"/notifications");
             
             notesRef.once('value',function(snap){
                 
@@ -603,7 +630,6 @@ var app = new Vue({
                
            });
 
-            app.gameAgent1 = "Select an Agent";
             app.gameAgent2 = "Select an Agent";
         },
         allowView(project){
@@ -709,10 +735,75 @@ var app = new Vue({
                 
             });
             app.enterProject(app.currentProject.id);
+        },
+        rejectResults(message){
+            db.ref('users/'+app.loggedIn.id+'/messages/'+message.id).set(null);
+            
+            var notesRef = db.ref("users/"+app.loggedIn.id+"/notifications");
+            
+            notesRef.once('value',function(snap){
+                app.loggedIn.notifications =  app.loggedIn.notifications - 1;
+                notesRef.set(snap.val() - 1);
+                
+            });
+            for(var noti in app.notifications){
+  
+                if (app.notifications[noti].id === message.id){
+                    app.notifications.pop(noti);
+                    break;
+                }
+            }
+        },
+        acceptResults(message){
+
+            for(var noti in app.notifications){
+  
+                if (app.notifications[noti].id === message.id){
+                    app.notifications.pop(noti);
+                    break;
+                }
+            }
+            
+            
+            var a1Ref = db.ref("projects/"+message.project.id+"/agents/array/"+message.a1.id);
+            var a2Ref = db.ref("projects/"+message.project.id+"/agents/array/"+message.a2.id);
+            
+            var check = 0;
+            a2Ref.once('value',function(snap){
+                if (snap.val() === undefined){
+                    check = 1;
+                    return 0;
+                }
+                a2Ref.update({
+                    elo:snap.val().elo+message.a2Change
+                });
+            });
+            if (check === 1){
+                return 0;
+            }
+            var notesRef = db.ref("users/"+app.loggedIn.id+"/notifications");
+            db.ref('users/'+app.loggedIn.id+'/messages/'+message.id).set(null);
+            notesRef.once('value',function(snap){
+                app.loggedIn.notifications =  app.loggedIn.notifications - 1;
+                notesRef.set(snap.val() - 1);
+            });
+            db.ref('games/'+message.id).set({
+                a1: message.a1,
+                a2: message.a2,
+                newa1: message.newa1,
+                newa2: message.newa2,
+                a1Change: message.a1Change,
+                a2Change: message.a2Change,
+                time: message.time,
+                id: message.id,
+                project: message.project,
+                result: message.result
+                
+            });
+
+                       
         }
-        
-        
-        
+
         
     }
 });

@@ -71,7 +71,7 @@
                     <div v-if = "logged">
                         Logged in as {{role}} {{loggedIn.name}} 
 
-                        <button disabled = "loggedIn.notifications === 0" @click = "screen === 'notifications'">Notifications ({{loggedIn.notifications}})</button>
+                        <button enable = "loggedIn.notifications !== 0" @click = "screen = 'notify'">Notifications ({{loggedIn.notifications}})</button>
 
 
                         <button id="sign-in" class="account-button" type="button" @click="signOut()">Sign Out</button>
@@ -128,9 +128,11 @@
             <div v-if= "screen === 'project'" >
                 <div id = "title">
                     <h1>{{currentProject.name}}</h1>
-                    Owner: {{currentProject.owner}}    K: {{currentProject.kval}}
+                    <h4>Owner: {{currentProject.owner}}</h4>
+                    <h4>K: {{currentProject.kval}}</h4>
                     <button v-if= "allowGame()" id = "gameButton" @click = "screen = 'game'">Add a Game</button>
                     <button v-if= "allowParticipate()" id = "gameButton" @click = "screen = 'participate'">Participate in a Game</button>
+                    <button v-if= "allowEdit()" @click ="screen = 'projectOptions'">Options</button>
                 </div>
                 <div class = "container">
                     <div class = "row">
@@ -176,7 +178,7 @@
                         </div>
                     </div>
                 </div>    
-                <button v-if= "allowEdit()" @click ="screen = 'projectOptions'">Options</button>
+
             </div>
 <!-- Enter New Game-->
             <div v-if= "screen === 'game'">
@@ -318,7 +320,7 @@
                                 <option :value = "'a2'">Win for {{gameAgent2.name}}</option>
                                 <option :value = "'t'">Tie</option>
                             </select>
-                            <button @click = "sendOutcome()">Add Game</button>
+                            <button @click = "sendOutcome()">Send Results to {{gameAgent2.user}}</button>
                         </div>
                     </div>
                 </div>
@@ -351,7 +353,17 @@
 
 <!-- Notifications View-->
             <div v-if= "screen === 'notify'">
-                <h1>Agents</h1>
+                <h1>Notifications</h1>
+                <div id = "projectcard" v-for ="notification in notifications">
+                    {{notification.message}}
+                    <p>System: {{notification.project.name}}</p>
+                    <p v-if = "notification.result === 'a2'">You won and gained {{notification.a2Change}} Elo!</p>
+                    <p v-if = "notification.result === 'a1'">You lost and degraded {{notification.a1Change}} Elo!</p>
+                    <p v-if = "notification.result === 't'">You tied and changed by {{notification.a2Change}} Elo!</p>
+                    <button @click = "rejectResults(notification)">No</button>
+                    <button @click = "acceptResults(notification)">Yes</button>
+                </div>
+                
             </div>
             
 <!-- Stats View -->
