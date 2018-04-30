@@ -348,6 +348,7 @@ var app = new Vue({
             var p1 = 0;
             var p2 = 0;
             var chance = 0;
+            var ee = app.numFabricate;
             if (app.numFabricate > 100){
                 alert("maybe not quite that many games");
                 return 0;
@@ -379,7 +380,7 @@ var app = new Vue({
                 
             }
             app.recordMe = true;
-            alert(app.numFabricate + "games fabricated.")
+            alert(ee + " games fabricated.")
             
         },
         signIn(){ // if everything is valid, signs in to the account
