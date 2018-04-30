@@ -27,6 +27,7 @@
     <body>
         
         <div id = "app">
+                
 <!--            Login Parts-->
                 <div class = "login">
                     <div v-if= "!logged" class = "container-fluid">
@@ -63,6 +64,7 @@
                                         <input id = "retuser" class="old-username"
                                            placeholder="returning username"
                                            v-model="oldusername">
+                                        <br />
                                             <label for = "retpass">Returning Password</label>
                                         <input id = "retpass" class="oldpassword" type = "password"
                                            placeholder="returning user password"
@@ -114,7 +116,7 @@
                     <ul>
                         <li><label>Project Name</label> <input v-model = "newProjName" placeholder = "project name"></li>
                         
-                        <li><label><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr></label> <input type = "number" v-model = "newK" placeholder = "k value"></li>
+                        <li><label><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr></label> <input max = 100 min = 1 type = "number" v-model = "newK" placeholder = "k value"></li>
                         
                         <li><label>Who can view:</label> <select v-model = "newPrivacy">
                             <option><abbr title = "Only users you invite may view">private</abbr></option>
@@ -151,9 +153,9 @@
                     <div class = "row">
                         <div id = "projectcard" class = "col-sm-12 col-md-5">
                             <h2>Agents:</h2>
-                            <button v-if= "allowEdit()" @click = "editAgentsOn = !editAgentsOn">Edit</button>
+                            <button v-if= "allowEdit()" @click = "editAgentsOn = !editAgentsOn">Add/Edit Agents</button>
                             <ul  class = "leaderboard" v-if = "ff">
-                                <li v-for = "agent in sortedAgents">{{agent.name}}: {{agent.elo}} <input type = "number" v-if= "editAgentsOn" v-model = "oldAgentElo"> <button  v-if= "editAgentsOn" @click = "changeElo(agent.id)">Change Elo</button></li>
+                                <li v-for = "agent in sortedAgents">{{agent.name}}: {{agent.elo}} <input max = 4000 min = 1 type = "number" v-if= "editAgentsOn" v-model = "oldAgentElo"> <button  v-if= "editAgentsOn" @click = "changeElo(agent.id)">Change Elo</button></li>
                                 
                                 <li v-if = "editAgentsOn">
                                     <input placeholder = "new agent name" v-model = "newAgent">
@@ -356,7 +358,7 @@
                     <ul>
                         <li>Project Name: <input v-model = "editProjName" placeholder = "project name"></li>
                         
-                        <li><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr> <input type = "number" v-model = "editK" placeholder = "k value"></li>
+                        <li><abbr title= "Higher K values mean that the system changes faster.">K Value:</abbr> <input max = 100 min = 1 type = "number" v-model = "editK" placeholder = "k value"></li>
                         
                         <li>Who can view: <select v-model = "editPrivacy">
                             <option><abbr title = "Only users you invite may view">private</abbr></option>
@@ -374,8 +376,10 @@
                         
                         <p>If you'd just like a good demonstration of how a real system might work, you can type in a number of simulated games and the system will create them for you, although only the records of 10 games will be saved.
                         </p>
-                        Number of Games: <input v-model = "numFabricate" type = "number">
+                        Number of Games: <input v-model = "numFabricate" type = "number" max = 100 min = 0>
                         <button @click = "fabricateDataset()">Fabricate Dataset</button>
+                        
+                        <p>To export all data as a JSON, disable popup blockers and click here:</p> <button @click= "exportCurrent()">Export Project</button>
                     </ul>
             </div>
 
@@ -408,7 +412,7 @@
                     <li>Edit projects that other users have chosen to keep open</li>
                 </ul>
                 <h3>What can I do with a project?</h3>
-                <p>First, you need to choose your settings. You can choose whatever name you'd like. The K-value is just a measure of how volatile your system is. Generally, 30 is used for low-level players and 15 is used for players at the very top. The privacy settings choose both who can view the project, as well as who can make edits to it. You can also choose if you would like to be an agent (player) in the system, but if not, you can always add yourself later.  You can modify these settings in the project options.</p>
+                <p>First, you need to choose your settings. You can choose whatever name you'd like. The K-value is just a measure of how volatile your system is. Generally, 30 is used for low-level players and 15 is used for players at the very top. The privacy settings choose both who can view the project, as well as who can make edits to it. You can also choose if you would like to be an agent (player) in the system, but if not, you can always add yourself later.  You can modify these settings in the project options. In your options you can also export information about your agents and users in JSON format.</p>
                 <p>Next, you need to populate your project with some agents by clicking the "edit" button on the agents tab. An agent can either be a user or not, but if they're a user, you need to first add them to your project under the "user" list by typing in their name. If you have permission to edit the project, you will be able to edit the users' elo (you may need to refresh the page to see the changes).  Once you have at least two agents, you can input the results of games by clicking the "add a game" button on the project's menu. Once you're on that menu, you can choose two agents and input the result of a game between them and see what sort of changes would result.  Once you're ready, you can add the game and the resulting changes will be calculated and added to the system.</p>
                 <p>If an agent is also a user, they can register games by themselves with other users by going to the "Participate in a Game" selection. By registering a game with another user this way, the other user will get a notification (found under the notifications tab) that they can use to verify the game as valid.  Once both players have validated the game, it is added as normal.</p>
                 <p>If you'd like a quick demonstration of how it may work in the real world, you can go to your project's options and have your computer simulate up to 99 games with your current agents.  As is the case in reality, agents with higher Elo are more likely to continue to accumulate Elo, while agents with lower Elo tend to continue losing Elo.</p>
@@ -416,12 +420,14 @@
             </div>
 <!--    Admin View-->
             <div id = "help" v-if= "screen === 'admin'">
+                To export all data as a JSON, disable popup blockers and click here: <button @click= "exportEverything()">Export Everything</button>
                 <div v-for = "event in hist">
                     {{event.mes}} at {{event.time}}
                 </div>
             </div>
             
         </div>
+        
     </body>
     <footer>
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.

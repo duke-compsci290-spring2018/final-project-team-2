@@ -20,6 +20,7 @@ var RussianHackerMode= false; // if true, can see and edit everything except par
 
 
 
+
 function calculateExpectedResult(elo1,elo2){
     adjustedDifference = (elo2-elo1)/400;
     return 1/(1+Math.pow(10,adjustedDifference));
@@ -30,7 +31,12 @@ function calculateNewElo(elo1, elo2, result, kval) {
 }
 
 
-
+function exportData(jayson)  { // thanks to some user on Piazza that was kind enough to show me this
+        
+      var myWindow = window.open("", "", "width=200,height=100"); // opens a window with the required stuff
+        console.log(myWindow)
+      myWindow.document.write(JSON.stringify(jayson));  // writes to this window the entire js object
+}
 
 
 
@@ -71,7 +77,6 @@ var agentsRef = db.ref('agents');
 var histRef = db.ref('hist');
 // connect Firebase to Vue
 Vue.use(VueFire);
-
 
 
 
@@ -523,6 +528,8 @@ var app = new Vue({
             
         },
         enterProject(project){
+            app.editAgentsOn = false;
+            app.editUsersOn = false;
             var ref = db.ref("projects/"+project);
             app.screen = 'project';
             ref.once('value', function(snap){
@@ -621,6 +628,7 @@ var app = new Vue({
             app.newAgent = '';
         },
         changeElo(id){
+            
             app.ff = false;
             var ref = db.ref("projects/"+app.currentProject.id+"/agents/array/"+id);
             ref.once('value',function(snap){
@@ -873,6 +881,7 @@ var app = new Vue({
                 
             });
             app.enterProject(app.currentProject.id);
+
         },
         rejectResults(message){
             db.ref('users/'+app.loggedIn.id+'/messages/'+message.id).set(null);
@@ -891,6 +900,16 @@ var app = new Vue({
                     break;
                 }
             }
+        },
+        exportEverything(){
+            db.ref().once('value',function(snap){
+                exportData(snap.val());
+            });
+        },
+        exportCurrent(){
+            db.ref("projects/"+app.currentProject.id).once('value',function(snap){
+                exportData(snap.val());
+            });
         },
         acceptResults(message){
 
