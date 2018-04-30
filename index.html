@@ -274,6 +274,13 @@
                             </select>
                             <button @click = "resolveOutcome()">Add Game</button>
                         </div>
+                        <div id = "projectcard" v-if = "lastGame !== 0">
+                                    <h1>Last Game:</h1>
+                                    <h4>{{lastGame.a1.name}}({{lastGame.a1.elo}}) vs. {{lastGame.a2.name}}({{lastGame.a2.elo}})</h4>
+                                    <a v-if = "lastGame.result === 'a1'">Win for {{lastGame.a1.name}} (+{{lastGame.a1Change}})</a>
+                                    <a v-if = "lastGame.result === 'a2'">Win for {{lastGame.a2.name}} (+{{lastGame.a2Change}})</a>
+                                    <a v-if = "lastGame.result === 't'">Tie! ({{lastGame.a1Change}})</a>
+                        </div>
                     </div>
                 </div>
 

@@ -223,6 +223,23 @@ var app = new Vue({
             return gg;
             
         },
+        lastGame(){
+            var gg = [];
+            var num = 10;
+            
+            for (var game in app.games){
+                if (app.games[game].project.id == app.currentProject.id){
+                    gg.push(app.games[game]);
+                }
+            }
+            gg.sort(function(a,b){
+                return b.time-a.time;
+            });
+            if (gg.length === 0){
+                return 0;
+            }
+            return gg[0];
+        },
         userIsAgent(){
             for (var agent in app.agentList){
                 if (agent.user === app.loggedIn.name){
@@ -362,7 +379,7 @@ var app = new Vue({
                 
             }
             app.recordMe = true;
-            
+            alert(app.numFabricate + "games fabricated.")
             
         },
         signIn(){ // if everything is valid, signs in to the account

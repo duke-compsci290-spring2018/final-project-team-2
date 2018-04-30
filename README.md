@@ -27,6 +27,8 @@ It's pretty clear how to go through most of the steps to set up games. The web d
 Jason Akers, 4/29/18 6:00
 Project setup was quite intuitive, however adding users and starting/adding games could use work.
 
+Daniel Getman, 4/29/18 11:02
+The program was easy to use and the instructions were clear. The was however lacking of feedback. I was not sure if my actions went through since no information about the results were posted.
 
 
 
