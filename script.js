@@ -595,6 +595,13 @@ var app = new Vue({
                 alert ("please enter a name");
                 return 0;
             }
+            for (user in app.userList){
+                
+                if (app.userList[user].name === app.newUserName){
+                    alert (app.newAgent+" is already a user");
+                    return 0;
+                }
+            }
             app.userList.push({
                            name: app.newUserName,
                            role: "user",
@@ -610,6 +617,7 @@ var app = new Vue({
                             // Add Invited
 
                         });
+            app.newUserName = "";
             app.ff = "true";
         },
         addAgent(){
