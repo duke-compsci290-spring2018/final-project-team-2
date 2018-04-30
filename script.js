@@ -538,7 +538,7 @@ var app = new Vue({
             }
             db.ref("hist/"+Date.now()).set({
                 time: presenttime(),
-                mes: "new project: "+ app.loggedIn.name +"by"+app.loggedIn.name
+                mes: "new project: "+ app.loggedIn.name +" by "+app.loggedIn.name
             });
             
             this.screen = "main";

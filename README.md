@@ -9,7 +9,7 @@ Also the admin is:
 Username: Ryan
 password: password
 and the backup JSON is named rjf19-elo-export.json in the repository.
-I think the instructions in the help menu should be pretty thorough for most things, although whenever you're logged in as an admin, there is a button in the loginbar that lets you view history of login and group creation.
+I think the instructions in the help menu should be pretty thorough for most things, although whenever you're logged in as an admin, there is a button in the loginbar that lets you view history of login and group creation. Also in the admin menu there is a button that lets you export the entire project in JSON format.  I chose to relegate this to the admin only because the JSON includes what would be sensitive information like login information.
 
 *references for your data that establishes its authenticity*
 Since this project is, by its nature, entirely about user-generated data, I don't have a whole lot to tell you here, other than that I used https://en.wikipedia.org/wiki/Timeline_of_the_Napoleonic_era to generate my elo system on the Napoleonic Wars.
