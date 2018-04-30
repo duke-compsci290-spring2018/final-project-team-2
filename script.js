@@ -350,7 +350,7 @@ var app = new Vue({
             var chance = 0;
             var ee = app.numFabricate;
             if (app.numFabricate > 100){
-                alert("maybe not quite that many games");
+                alert("please enter a number less than 100");
                 return 0;
             }
             app.recordMe = false;
